@@ -23,3 +23,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('searchPants/find', 'App\Http\Controllers\MainController@find');
+
+Route::post('searchPants/find', 'App\Http\Controllers\MainController@register');
+
+
