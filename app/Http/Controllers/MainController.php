@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\usersFavoriteList;
 
 class MainController extends Controller
 {
@@ -17,7 +18,7 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $checkList = DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         // ddd($checkList);
 
         if(isset($checkList)){
@@ -30,7 +31,7 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'pants')->update($param);
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->update($param);
         }else{
             $param = [
                 'user_Id' => $user->id,
@@ -41,7 +42,7 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->insert($param);
+            DB::table('usersFavoriteLists')->insert($param);
         }
 
         return view('searchItem.searchTops', ['input' => '']);
@@ -56,7 +57,7 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $checkList = DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
         // ddd($checkList);
 
         if(isset($checkList)){
@@ -69,7 +70,7 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'tops')->update($param);
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->update($param);
         }else{
             $param = [
                 'user_Id' => $user->id,
@@ -80,7 +81,7 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->insert($param);
+            DB::table('usersFavoriteLists')->insert($param);
         }
         return view('searchItem.searchShoes', ['input' => '']);
     }
@@ -94,7 +95,7 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $checkList = DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
         // ddd($checkList);
 
         if(isset($checkList)){
@@ -107,7 +108,7 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'shoes')->update($param);
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->update($param);
         }else{
             $param = [
                 'user_Id' => $user->id,
@@ -118,8 +119,21 @@ class MainController extends Controller
                 'category' => $request->category,
                 'color' => $request->color,
             ];
-            DB::table('usersFavoriteList')->insert($param);
+            DB::table('usersFavoriteLists')->insert($param);
         }
-        return view('searchItem.yourList', ['input' => '']);
+        // return view('searchItem.yourList', ['input' => '']);
+        return redirect('/yourlist');
+    }
+
+    public function showList(){
+
+        $user = Auth::user();
+
+        $pantsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->get();
+        $topsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->get();
+        $shoesItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->get();
+
+        return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'users' => $user]);
+
     }
 }

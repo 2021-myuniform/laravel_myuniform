@@ -35,4 +35,7 @@ Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind');
 
 Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister');
 
+Route::get('yourlist', 'App\Http\Controllers\MainController@showList');
+
+
 
