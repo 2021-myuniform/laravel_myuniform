@@ -56,18 +56,32 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $param = [
-            'user_Id' => $user->id,
-            'type' => $request->type,
-            'gender' => $request->gender,
-            'target' => $request->target,
-            'brand' => $request->brand,
-            'category' => $request->category,
-            'color' => $request->color,
+        $checkList = DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'tops')->first();
+        // ddd($checkList);
 
-        ];
-
-        DB::table('usersFavoriteList')->insert($param);
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'tops')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteList')->insert($param);
+        }
         return view('searchItem.searchShoes', ['input' => '']);
     }
 
@@ -80,18 +94,32 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $param = [
-            'user_Id' => $user->id,
-            'type' => $request->type,
-            'gender' => $request->gender,
-            'target' => $request->target,
-            'brand' => $request->brand,
-            'category' => $request->category,
-            'color' => $request->color,
+        $checkList = DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        // ddd($checkList);
 
-        ];
-
-        DB::table('usersFavoriteList')->insert($param);
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteList')->where('user_id', $user->id)->where('type', 'shoes')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteList')->insert($param);
+        }
         return view('searchItem.yourList', ['input' => '']);
     }
 }
