@@ -32,3 +32,7 @@ Route::get('searchPants/find', 'App\Http\Controllers\PantsController@find');
 Route::post('searchPants/find', 'App\Http\Controllers\PantsController@search');
 
 Route::post('searchPants/add', 'App\Http\Controllers\PantsController@addPants');
+
+Route::get('searchTops/find', 'App\Http\Controllers\PantsController@topsFind');
+
+Route::post('searchTops/find', 'App\Http\Controllers\PantsController@topsSearch');

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="http://localhost/laravel_myuniform/public/searchPants/find" method="post">
+    <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post">
         @csrf
         <p>最大値</p>
         <input type="text" name="inputHigh">

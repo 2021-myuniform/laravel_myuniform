@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pants_table;
+use App\Models\Tops_table;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -71,6 +72,28 @@ class PantsController extends Controller
 
         DB::table('storage_pants')->insert($param);
         return view('searchItem.topsFind', ['input' => '']);
+    }
 
+    public function topsFind(Request $request)
+    {
+        return view('searchItem.topsFind', ['input' => '']);
+    }
+
+    public function topsSearch(Request $request)
+    {
+
+        // dd($request->inputHigh);
+
+        $max = $request->inputHigh + 0;
+        $min = $request->inputLow + 0;
+        $colors = $request->colors;
+
+        // $item = Pants_table::priceGreaterThan($max)->priceLessThan($min)->first();
+        $item = Tops_table::priceGreaterThan($min)->priceLessThan($max)->getColor($colors)->get();
+
+        // ddd($item);
+
+        $param = ['inputHigh' => $request->inputHigh, 'inputLow' => $request->inputLow, 'items' => $item];
+        return view('searchItem.topsFind', $param);
     }
 }
