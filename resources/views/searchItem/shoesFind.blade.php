@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post">
+    <form action="http://localhost/laravel_myuniform/public/searchShoes/find" method="post">
         @csrf
         <p>最大値</p>
         <input type="text" name="inputHigh">
@@ -25,7 +25,7 @@
     @if (isset($items))
     @foreach ($items as $item)
     {{-- <table> --}}
-                <form action="http://localhost/laravel_myuniform/public/searchTops/add" method="post">
+                <form action="http://localhost/laravel_myuniform/public/searchShoes/add" method="post">
                     <div style="background-color: gray">
                         @csrf
                          <tr><th>Data</th></tr>

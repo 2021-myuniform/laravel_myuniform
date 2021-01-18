@@ -36,3 +36,12 @@ Route::post('searchPants/add', 'App\Http\Controllers\PantsController@addPants');
 Route::get('searchTops/find', 'App\Http\Controllers\PantsController@topsFind');
 
 Route::post('searchTops/find', 'App\Http\Controllers\PantsController@topsSearch');
+
+Route::post('searchTops/add', 'App\Http\Controllers\PantsController@addTops');
+
+Route::get('searchShoes/find', 'App\Http\Controllers\PantsController@shoesFind');
+
+Route::post('searchShoes/find', 'App\Http\Controllers\PantsController@shoesSearch');
+
+Route::post('searchShoes/add', 'App\Http\Controllers\PantsController@addShoes');
+
