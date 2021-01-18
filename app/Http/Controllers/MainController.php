@@ -8,7 +8,7 @@ class MainController extends Controller
 {
     public function find(Request $request)
     {
-        view('searchItem.searchPants');
+        return view('searchItem.searchPants');
     }
 
     public function register(Request $request)
