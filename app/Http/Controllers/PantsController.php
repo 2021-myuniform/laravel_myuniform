@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pants_table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PantsController extends Controller
 {
@@ -55,5 +56,21 @@ class PantsController extends Controller
 
         $param = ['inputHigh' => $request->inputHigh, 'inputLow' => $request->inputLow, 'items' => $item];
         return view('searchItem.find', $param);
+    }
+
+    public function addPants(Request $request)
+    {
+
+        $param = [
+            'itemId' => $request->itemId,
+            'price' => $request->price,
+            'brand' => $request->brand,
+            'color' => $request->color,
+
+        ];
+
+        DB::table('storage_pants')->insert($param);
+        return view('searchItem.topsFind', ['input' => '']);
+
     }
 }
