@@ -40,7 +40,7 @@
         @endforeach
     </div> --}}
 
-    <div>
+    <div style="background-color: gray">
         @foreach ($pantsItemsOutputs as $pantsItemsOutput)
          <li>
             <p>{{$pantsItemsOutput->id}}</p>
@@ -50,6 +50,34 @@
             <p>{{$pantsItemsOutput->brand}}</p>
             <p>{{$pantsItemsOutput->category}}</p>
             <p>{{$pantsItemsOutput->color}}</p>
+         </li>
+        @endforeach
+    </div>
+
+    <div style="background-color: pink">
+        @foreach ($topsItemsOutputs as $topsItemsOutput)
+         <li>
+            <p>{{$topsItemsOutput->id}}</p>
+            <p>{{$topsItemsOutput->jancode}}</p>
+            <p>{{$topsItemsOutput->adult}}</p>
+            <p>{{$topsItemsOutput->price}}</p>
+            <p>{{$topsItemsOutput->brand}}</p>
+            <p>{{$topsItemsOutput->category}}</p>
+            <p>{{$topsItemsOutput->color}}</p>
+         </li>
+        @endforeach
+    </div>
+
+    <div style="background-color: lightgreen">
+        @foreach ($shoesItemsOutputs as $shoesItemsOutput)
+         <li>
+            <p>{{$shoesItemsOutput->id}}</p>
+            <p>{{$shoesItemsOutput->jancode}}</p>
+            <p>{{$shoesItemsOutput->adult}}</p>
+            <p>{{$shoesItemsOutput->price}}</p>
+            <p>{{$shoesItemsOutput->brand}}</p>
+            <p>{{$shoesItemsOutput->category}}</p>
+            <p>{{$shoesItemsOutput->color}}</p>
          </li>
         @endforeach
     </div>

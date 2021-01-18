@@ -145,9 +145,29 @@ class MainController extends Controller
 
 
         $topsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
-        $shoesItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $topsItemId = $topsItems->id;
+        $topsItemUser_id = $topsItems->user_id;
+        $topsItemType = $topsItems->type;
+        $topsItemGender = $topsItems->gender;
+        $topsItemTarget = $topsItems->target;
+        $topsItemBrand = $topsItems->brand;
+        $topsItemCategory = $topsItems->category;
+        $topsItemColor = $topsItems->color;
+        $topsItemsOutput = DB::table('tops_tables')->where('gender', $topsItemGender)->where('adult', $topsItemTarget)->where('color', $topsItemColor)->get();
 
-        return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'pantsItemsOutputs' => $pantsItemsOutput, 'users' => $user]);
+
+        $shoesItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $shoesItemId = $shoesItems->id;
+        $shoesItemUser_id = $shoesItems->user_id;
+        $shoesItemType = $shoesItems->type;
+        $shoesItemGender = $shoesItems->gender;
+        $shoesItemTarget = $shoesItems->target;
+        $shoesItemBrand = $shoesItems->brand;
+        $shoesItemCategory = $shoesItems->category;
+        $shoesItemColor = $shoesItems->color;
+        $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('adult', $shoesItemTarget)->where('color', $shoesItemColor)->get();
+
+        return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'pantsItemsOutputs' => $pantsItemsOutput, 'topsItemsOutputs' => $topsItemsOutput, 'shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user]);
 
     }
 }
