@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    {{-- <div>
         @foreach ($pantsItems as $pantsItem)
          <li>
             <p>{{$pantsItem->id}}</p>
@@ -37,7 +37,21 @@
             <p>{{$shoesItem->type}}</p>
             <p>{{$shoesItem->color}}</p>
          </li>
-@endforeach
+        @endforeach
+    </div> --}}
+
+    <div>
+        @foreach ($pantsItemsOutputs as $pantsItemsOutput)
+         <li>
+            <p>{{$pantsItemsOutput->id}}</p>
+            <p>{{$pantsItemsOutput->jancode}}</p>
+            <p>{{$pantsItemsOutput->adult}}</p>
+            <p>{{$pantsItemsOutput->price}}</p>
+            <p>{{$pantsItemsOutput->brand}}</p>
+            <p>{{$pantsItemsOutput->category}}</p>
+            <p>{{$pantsItemsOutput->color}}</p>
+         </li>
+        @endforeach
     </div>
 </body>
 </html>
