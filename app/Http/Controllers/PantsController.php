@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Pants_table;
 use App\Models\Tops_table;
 use App\Models\Shoes_table;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PantsController extends Controller
 {
     public function index(Request $request)
     {
+        $user = Auth::user();
         $items = Pants_table::all();
-        return view('searchItem.index', ['items' => $items]);
+        return view('searchItem.index', ['items' => $items, 'users' => $user]);
     }
 
     public function find(Request $request)
@@ -62,9 +65,11 @@ class PantsController extends Controller
 
     public function addPants(Request $request)
     {
+        $user = Auth::user();
 
         $param = [
             'itemId' => $request->itemId,
+            'userId' => $user->id,
             'price' => $request->price,
             'brand' => $request->brand,
             'color' => $request->color,
@@ -100,9 +105,11 @@ class PantsController extends Controller
 
     public function addTops(Request $request)
     {
+        $user = Auth::user();
 
         $param = [
             'itemId' => $request->itemId,
+            'userId' => $user->id,
             'price' => $request->price,
             'brand' => $request->brand,
             'color' => $request->color,
@@ -138,9 +145,11 @@ class PantsController extends Controller
 
     public function addShoes(Request $request)
     {
+        $user = Auth::user();
 
         $param = [
             'itemId' => $request->itemId,
+            'userId' => $user->id,
             'price' => $request->price,
             'brand' => $request->brand,
             'color' => $request->color,

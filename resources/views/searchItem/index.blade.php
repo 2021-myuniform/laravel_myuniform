@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    @if (Auth::check())
+    <p>USER: {{$users->name}} : {{$users->id}}</p>
+    @endif
     @foreach ($items as $item)
     <li>
         <p>{{$item->id}}</p>
