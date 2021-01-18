@@ -27,4 +27,8 @@ Route::get('searchPants/find', 'App\Http\Controllers\MainController@find');
 
 Route::post('searchPants/find', 'App\Http\Controllers\MainController@register');
 
+Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind');
+
+Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister');
+
 

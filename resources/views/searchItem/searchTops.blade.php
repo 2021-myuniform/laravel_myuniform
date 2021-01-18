@@ -8,16 +8,15 @@
 </head>
 <body>
 
-    <form action="http://localhost/laravel_myuniform/public/searchPants/find" method="post">
+    <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post">
         @csrf
-        <input type="hidden" name="type" value="pants">
+        <input type="hidden" name="type" value="tops">
         <select name="gender" id="">
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select>
         <select name="target" id="">
             <option value="adult">Adult</option>
-            {{-- <option value="female">Female</option> --}}
         </select>
         <select name="brand" id="">
             <option value="yonex">Yonex</option>
