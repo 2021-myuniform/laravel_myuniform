@@ -45,5 +45,9 @@ Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegist
 
 Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist')->middleware(['auth']);
 
+Route::get('select/pants', 'App\Http\Controllers\SelectWearController@selectPants')->name('selectPants')->middleware(['auth']);
+
+Route::post('select/pants', 'App\Http\Controllers\SelectWearController@sendPants')->name('sendPants')->middleware(['auth']);
+
 
 
