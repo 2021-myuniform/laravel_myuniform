@@ -32,7 +32,78 @@ class SelectWearController extends Controller
         $user = Auth::user();
 
         $selectPants = $request->pantsItemsOutputId;
+        $param = [
+            'favPants' => $request->pantsItemsOutputId,
+        ];
+        DB::table('users')->where('id', $user->id)->update($param);
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
 
-        return view('contents.main', ['selectPants' => $selectPants,'users' => $user]);
+        return view('contents.main', ['selectPants' => $selectPants, 'userInfo' => $userInfo, 'users' => $user]);
+    }
+
+    public function selectTops(Request $request)
+    {
+        $user = Auth::user();
+
+        $topsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $topsItemId = $topsItems->id;
+        $topsItemUser_id = $topsItems->user_id;
+        $topsItemType = $topsItems->type;
+        $topsItemGender = $topsItems->gender;
+        $topsItemTarget = $topsItems->target;
+        $topsItemBrand = $topsItems->brand;
+        $topsItemCategory = $topsItems->category;
+        $topsItemColor = $topsItems->color;
+        $topsItemsOutput = DB::table('tops_tables')->where('gender', $topsItemGender)->where('adult', $topsItemTarget)->where('color', $topsItemColor)->get();
+
+        return view('contents.selectTops', ['topsItemsOutputs' => $topsItemsOutput,'users' => $user]);
+    }
+
+    public function sendTops(Request $request)
+    {
+        // ddd($request->pantsItemsOutputId);
+        $user = Auth::user();
+
+        $selectTops = $request->topsItemsOutputId;
+        $param = [
+            'favTops' => $request->topsItemsOutputId,
+        ];
+        DB::table('users')->where('id', $user->id)->update($param);
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+
+        return view('contents.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo,'users' => $user]);
+    }
+
+    public function selectShoes(Request $request)
+    {
+        $user = Auth::user();
+
+        $shoesItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $shoesItemId = $shoesItems->id;
+        $shoesItemUser_id = $shoesItems->user_id;
+        $shoesItemType = $shoesItems->type;
+        $shoesItemGender = $shoesItems->gender;
+        $shoesItemTarget = $shoesItems->target;
+        $shoesItemBrand = $shoesItems->brand;
+        $shoesItemCategory = $shoesItems->category;
+        $shoesItemColor = $shoesItems->color;
+        $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('adult', $shoesItemTarget)->where('color', $shoesItemColor)->get();
+
+        return view('contents.selectShoes', ['shoesItemsOutputs' => $shoesItemsOutput,'users' => $user]);
+    }
+
+    public function sendShoes(Request $request)
+    {
+        // ddd($request->pantsItemsOutputId);
+        $user = Auth::user();
+
+        $selectShoes = $request->shoesItemsOutputId;
+        $param = [
+            'favShoes' => $request->shoesItemsOutputId,
+        ];
+        DB::table('users')->where('id', $user->id)->update($param);
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+
+        return view('contents.main', ['selectShoes' => $selectShoes, 'userInfo' => $userInfo,'users' => $user]);
     }
 }

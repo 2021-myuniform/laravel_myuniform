@@ -169,4 +169,12 @@ class MainController extends Controller
 
         return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'pantsItemsOutputs' => $pantsItemsOutput, 'topsItemsOutputs' => $topsItemsOutput, 'shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user]);
     }
+
+    public function toMain(){
+        $user = Auth::user();
+
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+
+        return view('contents.main', ['userInfo' => $userInfo,'users' => $user]);
+    }
 }

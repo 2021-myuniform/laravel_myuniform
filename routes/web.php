@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('main', 'App\Http\Controllers\MainController@toMain')->name('toMain')->middleware(['auth']);
 
 Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants')->middleware(['auth']);
 
@@ -49,6 +50,14 @@ Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yo
 Route::get('select/pants', 'App\Http\Controllers\SelectWearController@selectPants')->name('selectPants')->middleware(['auth']);
 
 Route::post('select/pants', 'App\Http\Controllers\SelectWearController@sendPants')->name('sendPants')->middleware(['auth']);
+
+Route::get('select/tops', 'App\Http\Controllers\SelectWearController@selectTops')->name('selectTops')->middleware(['auth']);
+
+Route::post('select/tops', 'App\Http\Controllers\SelectWearController@sendTops')->name('sendTops')->middleware(['auth']);
+
+Route::get('select/shoes', 'App\Http\Controllers\SelectWearController@selectShoes')->name('selectShoes')->middleware(['auth']);
+
+Route::post('select/shoes', 'App\Http\Controllers\SelectWearController@sendShoes')->name('sendShoes')->middleware(['auth']);
 
 
 

@@ -18,16 +18,26 @@
         <div>ここに画像を表示</div>
         <div>
             <a href="{{ route('selectPants') }}">Pantsを選ぶ</a>
-            <a href="">Topsを選ぶ</a>
-            <a href="">Shoesを選ぶ</a>
+            <a href="{{ route('selectTops') }}">Topsを選ぶ</a>
+            <a href="{{ route('selectShoes') }}">Shoesを選ぶ</a>
         </div>
     </div>
     <div>
-        @if (isset($selectPants))
-        <div style="background-color: gray">
-            <p>ここはPantsの番号</p>
-            <p>{{$selectPants}}</p>
-        </div>
+        @if (isset($userInfo))
+        <p>ユーザーのお気に入りPants</p>
+        <p>{{$userInfo->favPants}}</p>
+        @endif
+    </div>
+    <div>
+        @if (isset($userInfo))
+        <p>ユーザーのお気に入りTops</p>
+        <p>{{$userInfo->favTops}}</p>
+        @endif
+    </div>
+    <div>
+        @if (isset($userInfo))
+        <p>ユーザーのお気に入りTops</p>
+        <p>{{$userInfo->favShoes}}</p>
         @endif
     </div>
 </body>
