@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('contents.main');
-});
+})->middleware(['auth']);
 
 Route::get('/main', function () {
     return view('contents.main');
-})->name('main');
+})->name('main')->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,19 +31,19 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants');
+Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants')->middleware(['auth']);
 
-Route::post('searchPants/find', 'App\Http\Controllers\MainController@register');
+Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->middleware(['auth']);
 
-Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind');
+Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind')->middleware(['auth']);
 
-Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister');
+Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister')->middleware(['auth']);
 
-Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind');
+Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind')->middleware(['auth']);
 
-Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister');
+Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister')->middleware(['auth']);
 
-Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist');
+Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist')->middleware(['auth']);
 
 
 
