@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
 Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants')->middleware(['auth']);
 
 Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->middleware(['auth']);
