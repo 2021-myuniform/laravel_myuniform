@@ -174,7 +174,10 @@ class MainController extends Controller
         $user = Auth::user();
 
         $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
 
-        return view('contents.main', ['userInfo' => $userInfo,'users' => $user]);
+        return view('contents.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user]);
     }
 }
