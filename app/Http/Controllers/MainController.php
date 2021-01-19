@@ -177,7 +177,10 @@ class MainController extends Controller
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
         $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
 
-        return view('contents.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user]);
+        return view('contents.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 }
