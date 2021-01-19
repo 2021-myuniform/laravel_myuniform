@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Shoesの検索条件を設定してください</p>
 
     <form action="http://localhost/laravel_myuniform/public/searchShoes/find" method="post">
         @csrf

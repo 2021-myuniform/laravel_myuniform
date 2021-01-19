@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('contents.main');
 });
+
+Route::get('/main', function () {
+    return view('contents.main');
+})->name('main');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,7 +31,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('searchPants/find', 'App\Http\Controllers\MainController@find');
+Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants');
 
 Route::post('searchPants/find', 'App\Http\Controllers\MainController@register');
 
@@ -35,7 +43,7 @@ Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind');
 
 Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister');
 
-Route::get('yourlist', 'App\Http\Controllers\MainController@showList');
+Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist');
 
 
 

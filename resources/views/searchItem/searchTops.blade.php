@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Topsの検索条件を設定してください</p>
 
     <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post">
         @csrf

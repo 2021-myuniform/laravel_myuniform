@@ -7,40 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    {{-- <div>
-        @foreach ($pantsItems as $pantsItem)
-         <li>
-            <p>{{$pantsItem->id}}</p>
-            <p>{{$pantsItem->user_id}}</p>
-            <p>{{$pantsItem->type}}</p>
-            <p>{{$pantsItem->color}}</p>
-         </li>
-@endforeach
-    </div>
-
-    <div>
-        @foreach ($topsItems as $topsItem)
-         <li>
-            <p>{{$topsItem->id}}</p>
-            <p>{{$topsItem->user_id}}</p>
-            <p>{{$topsItem->type}}</p>
-            <p>{{$topsItem->color}}</p>
-         </li>
-@endforeach
-    </div>
-
-    <div>
-        @foreach ($shoesItems as $shoesItem)
-         <li>
-            <p>{{$shoesItem->id}}</p>
-            <p>{{$shoesItem->user_id}}</p>
-            <p>{{$shoesItem->type}}</p>
-            <p>{{$shoesItem->color}}</p>
-         </li>
-        @endforeach
-    </div> --}}
+    <p>あなたの好みの条件にあったリストです</p>
 
     <div style="background-color: gray">
+        <p>Pantsの条件に一致したアイテム</p>
+        @if ($pantsItemsOutputs->isEmpty())
+            <p>条件にあったアイテムはありませんでした。</p>
+        @endif
         @foreach ($pantsItemsOutputs as $pantsItemsOutput)
          <li>
             <p>{{$pantsItemsOutput->id}}</p>
@@ -54,7 +27,12 @@
         @endforeach
     </div>
 
+
     <div style="background-color: pink">
+        <p>Topsの条件に一致したアイテム</p>
+        @if ($topsItemsOutputs->isEmpty())
+            <p>条件にあったアイテムはありませんでした。</p>
+        @endif
         @foreach ($topsItemsOutputs as $topsItemsOutput)
          <li>
             <p>{{$topsItemsOutput->id}}</p>
@@ -69,6 +47,10 @@
     </div>
 
     <div style="background-color: lightgreen">
+        <p>Shoesの条件に一致したアイテム</p>
+        @if ($shoesItemsOutputs->isEmpty())
+            <p>条件にあったアイテムはありませんでした。</p>
+        @endif
         @foreach ($shoesItemsOutputs as $shoesItemsOutput)
          <li>
             <p>{{$shoesItemsOutput->id}}</p>
@@ -80,6 +62,10 @@
             <p>{{$shoesItemsOutput->color}}</p>
          </li>
         @endforeach
+    </div>
+
+    <div>
+        <a href="{{ route('main') }}">メインページへ</a>
     </div>
 </body>
 </html>
