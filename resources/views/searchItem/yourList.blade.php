@@ -65,7 +65,7 @@
     </div>
 
     <div>
-        <a href="{{ route('main') }}">メインページへ</a>
+        <a href="{{ route('toMain') }}">メインページへ</a>
     </div>
 </body>
 </html>
