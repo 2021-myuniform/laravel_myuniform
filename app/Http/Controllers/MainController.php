@@ -168,6 +168,5 @@ class MainController extends Controller
         $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('adult', $shoesItemTarget)->where('color', $shoesItemColor)->get();
 
         return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'pantsItemsOutputs' => $pantsItemsOutput, 'topsItemsOutputs' => $topsItemsOutput, 'shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user]);
-
     }
 }

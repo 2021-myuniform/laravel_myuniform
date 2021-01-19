@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+
 Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants')->middleware(['auth']);
 
 Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->middleware(['auth']);
@@ -44,6 +45,4 @@ Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind')-
 Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister')->middleware(['auth']);
 
 Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist')->middleware(['auth']);
-
-
 
