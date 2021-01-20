@@ -1,4 +1,4 @@
-@section('searchTopsList')
+@section('searchItemsList')
 
 
 <div class="searchItemList">

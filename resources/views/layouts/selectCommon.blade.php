@@ -18,7 +18,7 @@
         @yield('showItem')
     </div>
 
-    @yield('searchTopsList')
+    @yield('searchItemsList')
 
     @yield('footer')
 
