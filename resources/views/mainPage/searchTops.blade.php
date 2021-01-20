@@ -10,4 +10,6 @@
 
 @include('layouts.showItem')
 
+@include('layouts.showPrice')
+
 @include('layouts.searchTopsList')

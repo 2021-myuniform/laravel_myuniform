@@ -16,6 +16,8 @@
         @yield('selectWear')
 
         @yield('showItem')
+
+        @yield('showPrice')
     </div>
 
     @yield('searchItemsList')

@@ -9,3 +9,5 @@
 @include('layouts.selectWear')
 
 @include('layouts.showItem')
+
+@include('layouts.showPrice')
