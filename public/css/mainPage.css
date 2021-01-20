@@ -1,0 +1,47 @@
+.selectWearList{
+    width: 30%;
+}
+
+.selectWearList_list{
+    background-color: skyblue;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.showWearItem{
+    display: flex;
+}
+
+.selectWearList_contents{
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.headerList{
+    background-color: black;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.headerList a{
+    color: white;
+}
+
+.userSelectImgTops{
+    width: 150px;
+}
+.userSelectImgPants{
+    width: 150px;
+    height: 200px;
+}
+.userSelectImgShoes{
+    width: 150px;
+}
+
+.showWearList{
+    width: 70%;
+    text-align: center;
+}

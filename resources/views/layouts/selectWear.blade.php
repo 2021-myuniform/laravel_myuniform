@@ -1,27 +1,38 @@
 @section('selectWear')
 
-<div>
-    <div>ここに画像を表示</div>
-    <div style="display: flex; background-color: lightblue">
-        <div>
-            <a href="{{ route('selectTops') }}">Topsを選ぶ</a>
-            <p>カラー:{{$getTopsSet->color}}</p>
-            <p>ブランド:{{$getTopsSet->brand}}</p>
-            <p>対象:{{$getTopsSet->gender}}</p>
+{{-- <div> --}}
+    <div class="selectWearList">
+        <div class="selectWearList_tops selectWearList_list">
+            <a href="{{ route('selectTops') }}">
+                <div class="selectWearList_contents">
+                Topsを選ぶ
+                <p>カラー:{{$getTopsSet->color}}</p>
+                <p>ブランド:{{$getTopsSet->brand}}</p>
+                <p>対象:{{$getTopsSet->gender}}</p>
+                </div>
+             </a>
         </div>
-        <div>
-            <a href="{{ route('selectPants') }}">Pantsを選ぶ</a>
-            <p>カラー:{{$getPantsSet->color}}</p>
-            <p>ブランド:{{$getPantsSet->brand}}</p>
-            <p>対象:{{$getPantsSet->gender}}</p>
+        <div class="selectWearList_pants selectWearList_list">
+            <a href="{{ route('selectPants') }}">
+                <div class="selectWearList_contents">
+                Pantsを選ぶ
+                <p>カラー:{{$getPantsSet->color}}</p>
+                <p>ブランド:{{$getPantsSet->brand}}</p>
+                <p>対象:{{$getPantsSet->gender}}</p>
+                </div>
+                 </a>
         </div>
-        <div>
-            <a href="{{ route('selectShoes') }}">Shoesを選ぶ</a>
+        <div class="selectWearList_shoes selectWearList_list">
+            <a href="{{ route('selectShoes') }}">
+            <div class="selectWearList_contents">
+            Shoesを選ぶ
             <p>カラー:{{$getShoesSet->color}}</p>
             <p>ブランド:{{$getShoesSet->brand}}</p>
             <p>対象:{{$getShoesSet->gender}}</p>
+            </div>
+            </a>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 
 @endsection

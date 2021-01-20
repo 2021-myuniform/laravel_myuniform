@@ -1,5 +1,9 @@
 @extends('layouts.mainCommon')
 
+@section('mainCss')
+<link rel="stylesheet" href="{{ asset('css/mainPage.css') }}">
+@endsection
+
 @include('layouts.header')
 
 @include('layouts.selectWear')
