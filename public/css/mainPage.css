@@ -45,3 +45,13 @@
     width: 70%;
     text-align: center;
 }
+
+.searchItemList{
+    height: 250px;
+    overflow: scroll;
+    background-color: pink;
+}
+
+.searchItemList_container{
+    display: flex;
+}

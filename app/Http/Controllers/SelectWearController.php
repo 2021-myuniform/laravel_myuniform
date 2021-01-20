@@ -67,7 +67,15 @@ class SelectWearController extends Controller
         $topsItemColor = $topsItems->color;
         $topsItemsOutput = DB::table('tops_tables')->where('gender', $topsItemGender)->where('adult', $topsItemTarget)->where('color', $topsItemColor)->get();
 
-        return view('contents.selectTops', ['topsItemsOutputs' => $topsItemsOutput,'users' => $user]);
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+
+        return view('mainPage.searchTops', ['topsItemsOutputs' => $topsItemsOutput,'users' => $user,'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function sendTops(Request $request)
