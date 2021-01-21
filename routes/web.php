@@ -59,9 +59,15 @@ Route::get('select/shoes', 'App\Http\Controllers\SelectWearController@selectShoe
 
 Route::post('select/shoes', 'App\Http\Controllers\SelectWearController@sendShoes')->name('sendShoes')->middleware(['auth']);
 
+// ジャンルごとの条件検索
+
 Route::get('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsFind')->name('changeTops')->middleware(['auth']);
 
 Route::post('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsRegister')->name('registerChangeTops')->middleware(['auth']);
+
+Route::get('searchPants/changeFind', 'App\Http\Controllers\MainController@changePantsFind')->name('changePants')->middleware(['auth']);
+
+Route::post('searchPants/changeFind', 'App\Http\Controllers\MainController@changePantsRegister')->name('registerChangePants')->middleware(['auth']);
 
 
 

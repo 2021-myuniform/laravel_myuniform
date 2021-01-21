@@ -35,7 +35,7 @@
                      </a>
             </div>
             <div class="selectWearList_select">
-                <a href="">
+                <a href="{{ route('changePants') }}">
                     <div class="selectWearList_selectItem">条件変更</div>
                 </a>
             </div>
