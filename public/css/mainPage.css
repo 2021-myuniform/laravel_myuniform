@@ -10,11 +10,30 @@ body{
     width: 30%;
 }
 
+.selectWearList_container{
+    display: flex;
+}
+
 .selectWearList_list{
     background-color: skyblue;
     cursor: pointer;
     margin: 10px;
     border-radius: 10px;
+    width: 70%;
+}
+
+.selectWearList_select{
+    width: 30%;
+    margin: 10px;
+}
+
+.selectWearList_selectItem{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: skyblue;
 }
 
 .showWearItem{
