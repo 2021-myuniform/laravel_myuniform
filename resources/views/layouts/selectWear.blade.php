@@ -3,7 +3,7 @@
 {{-- <div> --}}
     <div class="selectWearList">
         @if (isset($getTopsSet))
-        <div class="selectWearList_container">
+        <div class="selectWearList_container" id="selectWearList_tops">
             <div class="selectWearList_tops selectWearList_list">
                 <a href="{{ route('selectTops') }}">
                     <div class="selectWearList_contents">
@@ -23,7 +23,7 @@
         @endif
 
         @if (isset($getPantsSet))
-        <div class="selectWearList_container">
+        <div class="selectWearList_container" id="selectWearList_pants">
             <div class="selectWearList_pants selectWearList_list">
                 <a href="{{ route('selectPants') }}">
                     <div class="selectWearList_contents">
@@ -43,7 +43,7 @@
         @endif
 
         @if (isset($getShoesSet))
-        <div class="selectWearList_container">
+        <div class="selectWearList_container" id="selectWearList_shoes">
             <div class="selectWearList_shoes selectWearList_list">
                 <a href="{{ route('selectShoes') }}">
                 <div class="selectWearList_contents">

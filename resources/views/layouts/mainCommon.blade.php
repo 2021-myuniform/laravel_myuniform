@@ -11,6 +11,7 @@
 <body>
 
     @yield('header')
+    @yield('headerList')
 
     <div class="showWearItem">
         @yield('selectWear')
@@ -23,5 +24,6 @@
 
     @yield('footer')
 
+    @yield('mainJs')
 </body>
 </html>

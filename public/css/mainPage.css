@@ -6,6 +6,27 @@ body{
     font-size: 62.5%;
 }
 
+.headerList_container{
+    display: none;
+}
+
+.headerList_item{
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.headerList_select{
+    color: white;
+    justify-content: center;
+    font-size: 1.8em;
+    margin: auto 20px;
+}
+
 .selectWearList{
     width: 30%;
 }
@@ -23,7 +44,7 @@ body{
 }
 
 .selectWearList_select{
-    width: 30%;
+    width: 8vw;
     margin: 10px;
 }
 
@@ -38,6 +59,8 @@ body{
 
 .showWearItem{
     display: flex;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .selectWearList_contents{
@@ -84,3 +107,45 @@ body{
 .searchItemList_container{
     display: flex;
 }
+
+@media screen and (max-width: 480px){
+
+.headerList_container{
+     display: flex;
+}
+
+.selectWearList_container{
+    display: none;
+    margin: 10px;
+}
+
+.selectWearList{
+    margin: auto 0;
+}
+
+.selectWearList_list{
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.selectWearList_select{
+    width: 100%;
+    margin: 0;
+    height: 30px;
+}
+
+.selectWearList_contents{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.displayBlock{
+    display: block;
+}
+
+ }
