@@ -229,3 +229,78 @@
 .nextBtn{
 
 }
+
+/* SearchPants */
+
+.mannequinPants{
+    width: 70px;
+    height: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    margin: 90px auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* SearchShoes */
+
+.mannequinShoes{
+    width: 70px;
+    height: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    margin: 150px auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* yourList */
+
+.itemList{
+    font-size: 1.4em;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 20px;
+}
+
+.toMainBtn{
+    text-align: center;
+    font-size: 1.8em;
+    background-color: lightgray;
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.toMainBtn a{
+    color: black;
+}
+
+@media screen and (max-width: 480px){
+
+.categorySelect{
+    display: block;
+    text-align: center;
+}
+
+.categorySelectList{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.categoryText{
+    line-height: 1.5;
+    margin: 0;
+}
+
+}

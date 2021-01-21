@@ -48,3 +48,5 @@
 @endsection
 
 @include('layouts.header')
+
+@include('layouts.searchPants')

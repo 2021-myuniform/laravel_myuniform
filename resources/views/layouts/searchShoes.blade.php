@@ -11,23 +11,22 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのウェアについてお答えください。</p>
-        <p>まずはトップスについて教えてください！</p>
+        <p>ここではお探しのシューズカラーについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">
         <img class="mannequinImg" src="{{ asset('img/other/manekin_background.jpg') }}" alt="">
-        <div class="mannequinTops"></div>
+        <div class="mannequinShoes"></div>
     </div>
 
     {{-- <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post"> --}}
-    <form action="{{ route('searchTopsRegister') }}" method="post">
+    <form action="{{ route('searchShoesRegister') }}" method="post">
         @csrf
 
-        <input type="hidden" name="type" value="tops">
+        <input type="hidden" name="type" value="shoes">
 
         <div class="ask">
-            <p>お探しのトップスカラーを教えてください。</p>
+            <p>お探しのシューズカラーを教えてください。</p>
         </div>
 
         <div>
@@ -125,15 +124,21 @@
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="all" id="allCategory">
                     <div class="categoryText">
-                        長袖
+                        オールコート
                     </div>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="half" id="halfCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="clay" id="clayCategory">
                     <div class="categoryText">
-                        半袖
+                        オムニ・クレー
+                    </div>
+                </li>
+                <li class="categorySelectList">
+                    <input class="categorySelectInput" type="radio" name="category" value="carpet" id="carpetCategory">
+                    <div class="categoryText">
+                        カーペット
                     </div>
                 </li>
             </ul>

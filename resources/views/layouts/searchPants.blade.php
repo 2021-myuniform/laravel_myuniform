@@ -11,23 +11,22 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのウェアについてお答えください。</p>
-        <p>まずはトップスについて教えてください！</p>
+        <p>ここではお探しのパンツカラーについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">
         <img class="mannequinImg" src="{{ asset('img/other/manekin_background.jpg') }}" alt="">
-        <div class="mannequinTops"></div>
+        <div class="mannequinPants"></div>
     </div>
 
     {{-- <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post"> --}}
-    <form action="{{ route('searchTopsRegister') }}" method="post">
+    <form action="{{ route('searchPantsRegister') }}" method="post">
         @csrf
 
-        <input type="hidden" name="type" value="tops">
+        <input type="hidden" name="type" value="pants">
 
         <div class="ask">
-            <p>お探しのトップスカラーを教えてください。</p>
+            <p>お探しのパンツカラーを教えてください。</p>
         </div>
 
         <div>
@@ -127,13 +126,13 @@
                 <li class="categorySelectList">
                     <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
                     <div class="categoryText">
-                        長袖
+                        ロング
                     </div>
                 </li>
                 <li class="categorySelectList">
                     <input class="categorySelectInput" type="radio" name="category" value="half" id="halfCategory">
                     <div class="categoryText">
-                        半袖
+                        ショート
                     </div>
                 </li>
             </ul>

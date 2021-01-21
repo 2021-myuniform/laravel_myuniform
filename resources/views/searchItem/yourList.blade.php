@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,4 +68,15 @@
         <a href="{{ route('toMain') }}">メインページへ</a>
     </div>
 </body>
-</html>
+</html> --}}
+
+@extends('layouts.searchCommon')
+
+@section('mainCss')
+<link rel="stylesheet" href="{{ asset('css/mainPage.css') }}">
+<link rel="stylesheet" href="{{ asset('css/searchPage.css') }}">
+@endsection
+
+@include('layouts.header')
+
+@include('layouts.yourList')
