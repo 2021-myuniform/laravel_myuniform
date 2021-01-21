@@ -4,6 +4,26 @@
 
 body{
     font-size: 62.5%;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.displayPcOn{
+    display: block;
+}
+
+.displaySpOn{
+    display: none;
+}
+
+.headerTitle{
+    color: white;
+    font-size: 3em;
+    border-bottom: 1px solid white;
+    font-family: 'Cinzel', serif;
+}
+
+.headerTitle h1{
+    font-weight: 700;
 }
 
 .headerList_container{
@@ -80,7 +100,7 @@ body{
 .headerList{
     background-color: black;
     text-align: center;
-    height: 50px;
+    /* height: 50px; */
     line-height: 50px;
 }
 
@@ -142,6 +162,20 @@ body{
 }
 
 @media screen and (max-width: 480px){
+
+.displayPcOn{
+    display: none;
+}
+
+.displaySpOn{
+    display: block;
+}
+
+.headerList a{
+    color: white;
+    font-size: 2em;
+    margin: 30px;
+}
 
 .headerList_container{
      display: flex;
