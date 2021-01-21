@@ -1,3 +1,11 @@
+/* body{
+    font-size:62.5%;
+} */
+
+body{
+    font-size: 62.5%;
+}
+
 .selectWearList{
     width: 30%;
 }
@@ -15,7 +23,7 @@
 
 .selectWearList_contents{
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4em;
     line-height: 1.5;
 }
 
@@ -28,6 +36,8 @@
 
 .headerList a{
     color: white;
+    font-size: 1.8em;
+    margin: 20px;
 }
 
 .userSelectImgTops{
