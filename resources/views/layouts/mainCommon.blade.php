@@ -28,5 +28,6 @@
     @yield('footer')
 
     @yield('mainJs')
+
 </body>
 </html>

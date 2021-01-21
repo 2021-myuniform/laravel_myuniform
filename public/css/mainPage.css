@@ -114,26 +114,37 @@ body{
     width: 150px;
 }
 .userSelectImgPants{
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 150px;
 }
 .userSelectImgShoes{
-    width: 150px;
+    width: 100px;
 }
 
 .showWearList{
     width: 40%;
     text-align: center;
+    background-image: url('../img/other/manekin_background.jpg');
+    object-fit: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.showWearList_head{
+    height: 70px;
 }
 
 .searchItemList{
     height: 250px;
     overflow: scroll;
-    background-color: pink;
+    background-color: lightblue;
+    list-style: none;
 }
 
 .searchItemList_container{
     display: flex;
+    width: 90%;
+    margin: auto;
 }
 
 .showPrice{
@@ -159,6 +170,25 @@ body{
     text-align: right;
     padding: 10px;
     color: red;
+}
+
+.searchListText{
+    font-size: 1.4em;
+    text-align: center;
+    margin: 10px;
+}
+
+.searchItemList_box{
+    margin: 10px;
+    font-size: 1.4em;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    text-align: center;
+    box-shadow: 2px 2px 0px 0px grey;
+    line-height: 1.2;
 }
 
 @media screen and (max-width: 480px){
@@ -213,6 +243,14 @@ body{
 
 .displayBlock{
     display: block;
+}
+
+.showWearList{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    z-index: -1;
 }
 
  }
