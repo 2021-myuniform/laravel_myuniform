@@ -1,32 +1,32 @@
 @section('showPrice')
 
-<div>
+<div class="showPrice">
 
     @if (isset($getTopsImg))
-        <div>
-            <p>トップス:{{$getTopsImg->brand}}</p>
-            <p>{{$getTopsImg->price}}円</p>
+        <div class="showPriceList">
+            <p class="showPriceList_item">トップス : {{$getTopsImg->brand}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getTopsImg->price)}}</p>
         </div>
     @endif
 
     @if (isset($getPantsImg))
-        <div>
-            <p>パンツ:{{$getPantsImg->brand}}</p>
-            <p>{{$getPantsImg->price}}円</p>
+        <div class="showPriceList">
+            <p class="showPriceList_item">パンツ : {{$getPantsImg->brand}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getPantsImg->price)}}</p>
         </div>
     @endif
 
     @if (isset($getShoesImg))
-        <div>
-            <p>シューズ:{{$getShoesImg->brand}}</p>
-            <p>{{$getShoesImg->price}}円</p>
+        <div class="showPriceList">
+            <p class="showPriceList_item">シューズ : {{$getShoesImg->brand}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getShoesImg->price)}}</p>
         </div>
     @endif
 
     @if (isset($getTopsImg))
-        <div>
-            <p>合計金額</p>
-            <p>{{$getTopsImg->price + $getPantsImg->price + $getShoesImg->price}}円</p>
+        <div class="showPriceList">
+            <p class="showPriceList_item">合計金額</p>
+            <p class="showPriceList_price">¥ {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price)}}</p>
         </div>
     @endif
 

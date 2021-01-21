@@ -29,6 +29,7 @@ body{
 
 .selectWearList{
     width: 30%;
+    margin: auto 0;
 }
 
 .selectWearList_container{
@@ -108,6 +109,31 @@ body{
     display: flex;
 }
 
+.showPrice{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.4em;
+}
+
+.showPriceList{
+    width: 90%;
+    margin: auto;
+}
+
+.showPriceList_item{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.showPriceList_price{
+    text-align: right;
+    padding: 10px;
+    color: red;
+}
+
 @media screen and (max-width: 480px){
 
 .headerList_container{
@@ -119,9 +145,9 @@ body{
     margin: 10px;
 }
 
-.selectWearList{
+/* .selectWearList{
     margin: auto 0;
-}
+} */
 
 .selectWearList_list{
     width: 100%;
