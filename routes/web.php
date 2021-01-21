@@ -35,15 +35,15 @@ Route::get('main', 'App\Http\Controllers\MainController@toMain')->name('toMain')
 
 Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name('searchPants')->middleware(['auth']);
 
-Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->middleware(['auth']);
+Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->name('searchPantsRegister')->middleware(['auth']);
 
-Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind')->middleware(['auth']);
+Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind')->name('searchTops')->middleware(['auth']);
 
-Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister')->middleware(['auth']);
+Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister')->name('searchTopsRegister')->middleware(['auth']);
 
 Route::get('searchShoes/find', 'App\Http\Controllers\MainController@shoesFind')->middleware(['auth']);
 
-Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister')->middleware(['auth']);
+Route::post('searchShoes/find', 'App\Http\Controllers\MainController@shoesRegister')->name('searchShoesRegister')->middleware(['auth']);
 
 Route::get('yourlist', 'App\Http\Controllers\MainController@showList')->name('yourlist')->middleware(['auth']);
 
@@ -59,5 +59,22 @@ Route::get('select/shoes', 'App\Http\Controllers\SelectWearController@selectShoe
 
 Route::post('select/shoes', 'App\Http\Controllers\SelectWearController@sendShoes')->name('sendShoes')->middleware(['auth']);
 
+// ジャンルごとの条件検索
+
+Route::get('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsFind')->name('changeTops')->middleware(['auth']);
+
+Route::post('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsRegister')->name('registerChangeTops')->middleware(['auth']);
+
+Route::get('searchPants/changeFind', 'App\Http\Controllers\MainController@changePantsFind')->name('changePants')->middleware(['auth']);
+
+Route::post('searchPants/changeFind', 'App\Http\Controllers\MainController@changePantsRegister')->name('registerChangePants')->middleware(['auth']);
+
+Route::get('searchShoes/changeFind', 'App\Http\Controllers\MainController@changeShoesFind')->name('changeShoes')->middleware(['auth']);
+
+Route::post('searchShoes/changeFind', 'App\Http\Controllers\MainController@changeShoesRegister')->name('registerChangeShoes')->middleware(['auth']);
+
+// 新規ユーザーをイントロダクションへ
+
+Route::get('intro', 'App\Http\Controllers\MainController@intro')->name('intro')->middleware(['auth']);
 
 

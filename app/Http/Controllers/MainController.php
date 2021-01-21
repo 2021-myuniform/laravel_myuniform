@@ -14,6 +14,11 @@ class MainController extends Controller
         return view('searchItem.searchPants');
     }
 
+    public function changePantsFind(Request $request)
+    {
+        return view('searchItem.changeSearchPants');
+    }
+
     public function register(Request $request)
     {
         $user = Auth::user();
@@ -45,12 +50,59 @@ class MainController extends Controller
             DB::table('usersFavoriteLists')->insert($param);
         }
 
-        return view('searchItem.searchTops', ['input' => '']);
+        return view('searchItem.searchShoes', ['input' => '']);
+    }
+
+    public function changePantsRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        // ddd($checkList);
+
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->insert($param);
+        }
+
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function topsFind(Request $request)
     {
         return view('searchItem.searchTops');
+    }
+
+    public function changeTopsFind(Request $request)
+    {
+        return view('searchItem.changeSearchTops');
     }
 
     public function topsRegister(Request $request)
@@ -83,12 +135,60 @@ class MainController extends Controller
             ];
             DB::table('usersFavoriteLists')->insert($param);
         }
-        return view('searchItem.searchShoes', ['input' => '']);
+        return view('searchItem.searchPants', ['input' => '']);
+    }
+
+    public function changeTopsRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        // ddd($checkList);
+
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->insert($param);
+        }
+
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
+
     }
 
     public function shoesFind(Request $request)
     {
         return view('searchItem.searchShoes');
+    }
+
+    public function changeShoesFind(Request $request)
+    {
+        return view('searchItem.changeSearchShoes');
     }
 
     public function shoesRegister(Request $request)
@@ -123,6 +223,48 @@ class MainController extends Controller
         }
         // return view('searchItem.yourList', ['input' => '']);
         return redirect('/yourlist');
+    }
+
+    public function changeShoesRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        // ddd($checkList);
+
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $request->gender,
+                'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->insert($param);
+        }
+
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function showList(){
@@ -177,7 +319,15 @@ class MainController extends Controller
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
         $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
 
-        return view('contents.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
+    }
+
+    public function intro(Request $request)
+    {
+        return view('intro.welcome');
     }
 }

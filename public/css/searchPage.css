@@ -1,0 +1,306 @@
+.searchContainer{
+    max-width: 1400px;
+}
+
+.positionCircle{
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.currentPositionChecked{
+    background-color: black;
+}
+
+.currentPositionList{
+    display: flex;
+    justify-content: center;
+}
+
+.currentPositionList_item{
+    margin: 20px;
+}
+
+.currentPositionText{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.introText{
+    text-align: center;
+    margin: 30px;
+    font-size: 1.4em;
+    line-height: 1.2;
+}
+
+.mannequinSect{
+    text-align: center;
+    position: relative;
+}
+
+.mannequinImg{
+    width: 200px;
+    height: auto;
+}
+
+.mannequinTops{
+    width: 70px;
+    height: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    margin: 30px auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.colorSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.colorSelectInput{
+    display: none;
+}
+
+.colorSelectInput:checked + label > div{
+    border: 3px solid red;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+.colorBox{
+    margin: 10px;
+}
+
+.blackBox{
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.whiteBox{
+    width: 50px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.blueBox{
+    width: 50px;
+    height: 30px;
+    background-color: blue;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.pinkBox{
+    width: 50px;
+    height: 30px;
+    background-color: pink;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.redBox{
+    width: 50px;
+    height: 30px;
+    background-color: red;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.ask{
+    text-align: center;
+    font-size: 1.4em;
+    background-color: lightgray;
+    width: 50%;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+/* .askBrand{
+    margin: 20px;
+    text-align: center;
+    font-size: 1.4em;
+} */
+
+.brandSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.brandSelectList{
+    margin: 10px;
+    font-size: 1.4em;
+    border-bottom: 1px solid gray;
+}
+
+.brandSelectInput{
+    display: none;
+}
+
+.brandSelectInput:checked + label{
+    border: 3px solid red;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+.brandBox{
+    /* padding: 10px; */
+    border-radius: 5px;
+    font-size: 1.8em;
+}
+
+.genderSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.genderSelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.genderSelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.genderText{
+    margin-top: 20px;
+}
+
+.targetSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.targetSelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.targetSelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.targetText{
+    margin-top: 20px;
+}
+
+.categorySelect{
+    display: flex;
+    justify-content: center;
+}
+
+.categorySelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.categorySelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.categoryText{
+    margin-top: 20px;
+}
+
+.nextBtnBox{
+    text-align: center;
+    margin: 20px;
+}
+
+.nextBtn{
+
+}
+
+/* SearchPants */
+
+.mannequinPants{
+    width: 70px;
+    height: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    margin: 90px auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* SearchShoes */
+
+.mannequinShoes{
+    width: 70px;
+    height: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    margin: 150px auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* yourList */
+
+.itemList{
+    font-size: 1.4em;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 20px;
+}
+
+.toMainBtn{
+    text-align: center;
+    font-size: 1.8em;
+    background-color: lightgray;
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.toMainBtn a{
+    color: black;
+}
+
+@media screen and (max-width: 480px){
+
+.categorySelect{
+    display: block;
+    text-align: center;
+}
+
+.categorySelectList{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.categoryText{
+    line-height: 1.5;
+    margin: 0;
+}
+
+}

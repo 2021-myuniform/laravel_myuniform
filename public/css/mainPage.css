@@ -1,0 +1,184 @@
+/* body{
+    font-size:62.5%;
+} */
+
+body{
+    font-size: 62.5%;
+}
+
+.headerList_container{
+    display: none;
+}
+
+.headerList_item{
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.headerList_select{
+    color: white;
+    justify-content: center;
+    font-size: 1.8em;
+    margin: auto 20px;
+}
+
+.selectWearList{
+    width: 30%;
+    margin: auto 0;
+}
+
+.selectWearList_container{
+    display: flex;
+}
+
+.selectWearList_list{
+    background-color: lightgray;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 0px 0px 5px 1px darkgrey;
+}
+
+.selectWearList_contents{
+    color: black;
+}
+
+.selectWearList_select{
+    width: 8vw;
+    margin: 10px;
+}
+
+.selectWearList_selectItem{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: lightgray;
+    color: black;
+    box-shadow: 0px 0px 5px 1px darkgrey;
+}
+
+.showWearItem{
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.selectWearList_contents{
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 1.5;
+}
+
+.headerList{
+    background-color: black;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.headerList a{
+    color: white;
+    font-size: 1.8em;
+    margin: 20px;
+}
+
+.userSelectImgTops{
+    width: 150px;
+}
+.userSelectImgPants{
+    width: 150px;
+    height: 200px;
+}
+.userSelectImgShoes{
+    width: 150px;
+}
+
+.showWearList{
+    width: 40%;
+    text-align: center;
+}
+
+.searchItemList{
+    height: 250px;
+    overflow: scroll;
+    background-color: pink;
+}
+
+.searchItemList_container{
+    display: flex;
+}
+
+.showPrice{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.4em;
+}
+
+.showPriceList{
+    width: 90%;
+    margin: auto;
+}
+
+.showPriceList_item{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.showPriceList_price{
+    text-align: right;
+    padding: 10px;
+    color: red;
+}
+
+@media screen and (max-width: 480px){
+
+.headerList_container{
+     display: flex;
+}
+
+.selectWearList_container{
+    display: none;
+    margin: 10px;
+}
+
+/* .selectWearList{
+    margin: auto 0;
+} */
+
+.selectWearList_list{
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.selectWearList_select{
+    width: 100%;
+    margin: 0;
+    height: 30px;
+}
+
+.selectWearList_contents{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.displayBlock{
+    display: block;
+}
+
+ }

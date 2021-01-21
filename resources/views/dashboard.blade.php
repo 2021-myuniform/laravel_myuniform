@@ -12,7 +12,7 @@
                     You're logged in!
                 </div>
                 <div>
-                    <a style="border-bottom: 1px solid #777" href="{{ route('main') }}">メインページへ</a>
+                    <a style="border-bottom: 1px solid #777" href="{{ route('toMain') }}">メインページへ</a>
                 </div>
             </div>
         </div>
