@@ -69,6 +69,10 @@ Route::get('searchPants/changeFind', 'App\Http\Controllers\MainController@change
 
 Route::post('searchPants/changeFind', 'App\Http\Controllers\MainController@changePantsRegister')->name('registerChangePants')->middleware(['auth']);
 
+Route::get('searchShoes/changeFind', 'App\Http\Controllers\MainController@changeShoesFind')->name('changeShoes')->middleware(['auth']);
+
+Route::post('searchShoes/changeFind', 'App\Http\Controllers\MainController@changeShoesRegister')->name('registerChangeShoes')->middleware(['auth']);
+
 
 
 
