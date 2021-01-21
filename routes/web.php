@@ -73,6 +73,8 @@ Route::get('searchShoes/changeFind', 'App\Http\Controllers\MainController@change
 
 Route::post('searchShoes/changeFind', 'App\Http\Controllers\MainController@changeShoesRegister')->name('registerChangeShoes')->middleware(['auth']);
 
+// 新規ユーザーをイントロダクションへ
 
+Route::get('intro', 'App\Http\Controllers\MainController@intro')->name('intro')->middleware(['auth']);
 
 

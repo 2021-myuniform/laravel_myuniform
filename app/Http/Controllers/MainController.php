@@ -325,4 +325,9 @@ class MainController extends Controller
 
         return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
+
+    public function intro(Request $request)
+    {
+        return view('intro.welcome');
+    }
 }
