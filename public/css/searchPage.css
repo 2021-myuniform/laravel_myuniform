@@ -122,3 +122,110 @@
     box-sizing: border-box;
     border-radius: 10px;
 }
+
+.ask{
+    text-align: center;
+    font-size: 1.4em;
+    background-color: lightgray;
+    width: 50%;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+/* .askBrand{
+    margin: 20px;
+    text-align: center;
+    font-size: 1.4em;
+} */
+
+.brandSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.brandSelectList{
+    margin: 10px;
+    font-size: 1.4em;
+    border-bottom: 1px solid gray;
+}
+
+.brandSelectInput{
+    display: none;
+}
+
+.brandSelectInput:checked + label{
+    border: 3px solid red;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+.brandBox{
+    /* padding: 10px; */
+    border-radius: 5px;
+    font-size: 1.8em;
+}
+
+.genderSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.genderSelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.genderSelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.genderText{
+    margin-top: 20px;
+}
+
+.targetSelect{
+    display: flex;
+    justify-content: center;
+}
+
+.targetSelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.targetSelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.targetText{
+    margin-top: 20px;
+}
+
+.categorySelect{
+    display: flex;
+    justify-content: center;
+}
+
+.categorySelectList{
+    font-size: 2em;
+    margin: 0 70px;
+}
+
+.categorySelectInput{
+    width: 30px;
+    height: 30px;
+}
+
+.categoryText{
+    margin-top: 20px;
+}
+
+.nextBtnBox{
+    text-align: center;
+    margin: 20px;
+}
+
+.nextBtn{
+
+}
