@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
         </select>
         <select name="target" id="">
             <option value="adult">Adult</option>
-            {{-- <option value="female">Female</option> --}}
+            <option value="female">Female</option>
         </select>
         <select name="brand" id="">
             <option value="yonex">Yonex</option>
@@ -38,4 +38,13 @@
     </form>
 
 </body>
-</html>
+</html> --}}
+
+@extends('layouts.searchCommon')
+
+@section('mainCss')
+<link rel="stylesheet" href="{{ asset('css/mainPage.css') }}">
+<link rel="stylesheet" href="{{ asset('css/searchPage.css') }}">
+@endsection
+
+@include('layouts.header')

@@ -37,7 +37,7 @@ Route::get('searchPants/find', 'App\Http\Controllers\MainController@find')->name
 
 Route::post('searchPants/find', 'App\Http\Controllers\MainController@register')->middleware(['auth']);
 
-Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind')->middleware(['auth']);
+Route::get('searchTops/find', 'App\Http\Controllers\MainController@topsFind')->name('searchTops')->middleware(['auth']);
 
 Route::post('searchTops/find', 'App\Http\Controllers\MainController@topsRegister')->middleware(['auth']);
 

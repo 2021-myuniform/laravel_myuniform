@@ -50,7 +50,7 @@ class MainController extends Controller
             DB::table('usersFavoriteLists')->insert($param);
         }
 
-        return view('searchItem.searchTops', ['input' => '']);
+        return view('searchItem.searchShoes', ['input' => '']);
     }
 
     public function changePantsRegister(Request $request)
@@ -135,7 +135,7 @@ class MainController extends Controller
             ];
             DB::table('usersFavoriteLists')->insert($param);
         }
-        return view('searchItem.searchShoes', ['input' => '']);
+        return view('searchItem.searchPants', ['input' => '']);
     }
 
     public function changeTopsRegister(Request $request)

@@ -12,15 +12,7 @@
 
     @yield('header')
 
-    <div class="showWearItem">
-        @yield('selectWear')
-
-        @yield('showItem')
-
-        @yield('showPrice')
-    </div>
-
-    @yield('searchItemsList')
+    @yield('searchItemName')
 
     @yield('footer')
 

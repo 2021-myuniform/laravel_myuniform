@@ -37,11 +37,16 @@ body{
 }
 
 .selectWearList_list{
-    background-color: skyblue;
+    background-color: lightgray;
     cursor: pointer;
     margin: 10px;
     border-radius: 10px;
     width: 70%;
+    box-shadow: 0px 0px 5px 1px darkgrey;
+}
+
+.selectWearList_contents{
+    color: black;
 }
 
 .selectWearList_select{
@@ -55,7 +60,9 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: skyblue;
+    background-color: lightgray;
+    color: black;
+    box-shadow: 0px 0px 5px 1px darkgrey;
 }
 
 .showWearItem{
