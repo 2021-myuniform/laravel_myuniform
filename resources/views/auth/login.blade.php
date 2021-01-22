@@ -6,6 +6,7 @@
             </a>
         </x-slot>
 
+
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -50,6 +51,13 @@
                 <x-button class="ml-3">
                     {{ __('Login') }}
                 </x-button>
+
+                <div>
+                    <div>
+                        <a href="{{ route('register') }}">ユーザー登録</a>
+                    </div>
+                </div>
+
             </div>
         </form>
     </x-auth-card>
