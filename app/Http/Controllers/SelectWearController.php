@@ -30,10 +30,9 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.searchPants', ['pantsItemsOutputs' => $pantsItemsOutput,'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.searchPants', ['pantsItemsOutputs' => $pantsItemsOutput,'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function sendPants(Request $request)
@@ -54,12 +53,10 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
-        // ddd($totalCost);
 
         // ddd($getPantsImg->img);
 
-        return view('mainPage.main', ['selectPants' => $selectPants, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['selectPants' => $selectPants, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
 
         // return view('contents.main', ['selectPants' => $selectPants, 'userInfo' => $userInfo, 'users' => $user]);
     }
@@ -86,10 +83,9 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.searchTops', ['topsItemsOutputs' => $topsItemsOutput,'users' => $user,'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.searchTops', ['topsItemsOutputs' => $topsItemsOutput,'users' => $user,'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function sendTops(Request $request)
@@ -110,10 +106,9 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
 
         // return view('contents.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo,'users' => $user]);
     }
@@ -140,10 +135,9 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.searchShoes', ['shoesItemsOutputs' => $shoesItemsOutput,'users' => $user,'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.searchShoes', ['shoesItemsOutputs' => $shoesItemsOutput,'users' => $user,'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function sendShoes(Request $request)
@@ -164,10 +158,9 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['selectShoes' => $selectShoes, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['selectShoes' => $selectShoes, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
 
         // return view('contents.main', ['selectShoes' => $selectShoes, 'userInfo' => $userInfo,'users' => $user]);
     }

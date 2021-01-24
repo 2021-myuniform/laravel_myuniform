@@ -91,10 +91,9 @@ class MainController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function topsFind(Request $request)
@@ -178,10 +177,9 @@ class MainController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
 
     }
 
@@ -267,10 +265,9 @@ class MainController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function showList(){
@@ -328,10 +325,9 @@ class MainController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
-        $totalCost = $getPantsImg->price + $getTopsImg->price + $getShoesImg->price;
 
 
-        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'totalCost' => $totalCost]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
     }
 
     public function intro(Request $request)
