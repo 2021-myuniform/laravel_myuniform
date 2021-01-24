@@ -288,7 +288,7 @@ class MainController extends Controller
         $pantsItemBrand = $pantsItems->brand;
         $pantsItemCategory = $pantsItems->category;
         $pantsItemColor = $pantsItems->color;
-        $pantsItemsOutput = DB::table('pants_tables')->where('gender', $pantsItemGender)->where('adult', $pantsItemTarget)->where('color', $pantsItemColor)->get();
+        $pantsItemsOutput = DB::table('pants_tables')->where('gender', $pantsItemGender)->where('category', $pantsItemCategory)->where('color', $pantsItemColor)->where('brand', $pantsItemBrand)->get();
 
         // ddd($pantsItemsOutput);
 
@@ -303,7 +303,7 @@ class MainController extends Controller
         $topsItemBrand = $topsItems->brand;
         $topsItemCategory = $topsItems->category;
         $topsItemColor = $topsItems->color;
-        $topsItemsOutput = DB::table('tops_tables')->where('gender', $topsItemGender)->where('adult', $topsItemTarget)->where('color', $topsItemColor)->get();
+        $topsItemsOutput = DB::table('tops_tables')->where('gender', $topsItemGender)->where('category', $topsItemCategory)->where('color', $topsItemColor)->where('brand', $topsItemBrand)->get();
 
 
         $shoesItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
@@ -315,7 +315,7 @@ class MainController extends Controller
         $shoesItemBrand = $shoesItems->brand;
         $shoesItemCategory = $shoesItems->category;
         $shoesItemColor = $shoesItems->color;
-        $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('adult', $shoesItemTarget)->where('color', $shoesItemColor)->get();
+        $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('category', $shoesItemCategory)->where('color', $shoesItemColor)->where('brand', $shoesItemBrand)->get();
 
         return view('searchItem.yourList', ['pantsItems' => $pantsItems, 'topsItems' => $topsItems, 'shoesItems' => $shoesItems, 'pantsItemsOutputs' => $pantsItemsOutput, 'topsItemsOutputs' => $topsItemsOutput, 'shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user]);
     }
