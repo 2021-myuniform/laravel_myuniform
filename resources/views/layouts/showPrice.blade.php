@@ -32,8 +32,16 @@
                 {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price)}}
                 @elseif(isset($getTopsImg->price) && isset($getPantsImg->price))
                 {{number_format($getTopsImg->price + $getPantsImg->price)}}
+                @elseif(isset($getTopsImg->price) && isset($getShoesImg->price))
+                {{number_format($getTopsImg->price + $getShoesImg->price)}}
+                @elseif(isset($getPantsImg->price) && isset($getShoesImg->price))
+                {{number_format($getPantsImg->price + $getShoesImg->price)}}
                 @elseif (isset($getTopsImg->price))
                 {{number_format($getTopsImg->price)}}
+                @elseif (isset($getPantsImg->price))
+                {{number_format($getPantsImg->price)}}
+                @elseif (isset($getShoesImg->price))
+                {{number_format($getShoesImg->price)}}
                 @endif
         </div>
     @endif
