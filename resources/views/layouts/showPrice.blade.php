@@ -23,12 +23,12 @@
         </div>
     @endif
 
-    @if (isset($getTopsImg))
+    {{-- @if (isset($getTopsImg))
         <div class="showPriceList">
             <p class="showPriceList_item">合計金額</p>
-            <p class="showPriceList_price">¥ {{number_format(($getTopsImg->price) + ($getPantsImg->price) + ($getShoesImg->price))}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price)}}</p>
         </div>
-    @endif
+    @endif --}}
 
     {{-- {{$getShoesImg->price + $getTopsImg->price}} --}}
 
