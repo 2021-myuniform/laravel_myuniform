@@ -146,7 +146,7 @@
             </ul>
         </div>
 
-        <div class="ask">
+        {{-- <div class="ask">
             <p>お探しの対象を教えてください。</p>
         </div>
 
@@ -165,7 +165,7 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> --}}
 
         <div class="ask">
             <p>お探しのウェアのタイプをお選びください。</p>
