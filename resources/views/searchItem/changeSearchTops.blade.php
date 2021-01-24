@@ -156,7 +156,7 @@
             <p>お探しの対象を教えてください。</p>
         </div>
 
-        <div>
+        {{-- <div>
             <ul class="targetSelect">
                 <li class="targetSelectList">
                     <input class="targetSelectInput" type="radio" name="target" value="adult" id="adultTarget">
@@ -171,7 +171,7 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> --}}
 
         <div class="ask">
             <p>お探しのウェアのタイプをお選びください。</p>
