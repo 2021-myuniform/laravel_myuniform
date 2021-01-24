@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    @if (isset($getTopsImg))
+    @if (isset($totalCost))
         <div class="showPriceList">
             <p class="showPriceList_item">合計金額</p>
             <p class="showPriceList_price">¥ {{number_format($totalCost)}}</p>
