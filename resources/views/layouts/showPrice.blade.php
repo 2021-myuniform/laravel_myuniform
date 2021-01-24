@@ -24,7 +24,7 @@
     @endif
 
 
-    @if (isset($getTopsImg->price) | isset($getPantsImg->price) | isset($getShoesImg->price))
+    @if (isset($getTopsImg->price) || isset($getPantsImg->price) || isset($getShoesImg->price))
         <div class="showPriceList">
             <p class="showPriceList_item">合計金額</p>
             <p class="showPriceList_price">¥
