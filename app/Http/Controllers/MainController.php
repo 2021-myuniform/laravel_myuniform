@@ -9,6 +9,11 @@ use App\Models\usersFavoriteList;
 
 class MainController extends Controller
 {
+    public function toFirst(Request $request)
+    {
+        return view('firstPage.main');
+    }
+
     public function find(Request $request)
     {
         return view('searchItem.searchPants');
