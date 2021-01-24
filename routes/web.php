@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('contents.main');
-})->middleware(['auth']);
+// Route::get('/', function () {
+//     return view('contents.main');
+// })->middleware(['auth']);
+
+Route::get('/', 'App\Http\Controllers\MainController@toFirst')->name('toFirst');
 
 Route::get('/main', function () {
     return view('contents.main');
