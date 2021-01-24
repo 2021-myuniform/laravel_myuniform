@@ -152,11 +152,11 @@
             </ul>
         </div>
 
-        <div class="ask">
+        {{-- <div class="ask">
             <p>お探しの対象を教えてください。</p>
         </div>
 
-        {{-- <div>
+        <div>
             <ul class="targetSelect">
                 <li class="targetSelectList">
                     <input class="targetSelectInput" type="radio" name="target" value="adult" id="adultTarget">

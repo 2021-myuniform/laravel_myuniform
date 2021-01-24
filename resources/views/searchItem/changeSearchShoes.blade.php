@@ -182,7 +182,7 @@
                     </div>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="clay" id="clayCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="omni" id="omniCategory">
                     <div class="categoryText">
                         オムニ・クレー
                     </div>
