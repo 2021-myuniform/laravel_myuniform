@@ -13,3 +13,6 @@
 
 @include('firstPage.mainLP')
 
+@include('layouts.footer')
+
+

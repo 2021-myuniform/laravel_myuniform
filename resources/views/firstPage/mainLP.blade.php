@@ -9,8 +9,8 @@
                 <a class="titleBtn" href="">ログインはこちら</a>
             </div>
         </div>
-        <div>
-            <h3>スポーツの時間をもっとオシャレに、もっとワクワク。</h3>
+        <div class="title1Text">
+            <h2 class="title1TextH2">スポーツの時間をもっとオシャレに、もっとワクワク。</h2>
             <p>MyUniformは、気になるスポーツウェアを自由にコーディネートして</p>
             <p>着てみたいブランドのウェアやカラーを購入前に確認できるアプリです。</p>
         </div>
@@ -83,7 +83,39 @@
                 <img src="{{asset('/img/firstLP/training.jpg')}}" alt="">
             </li>
         </ul>
+        <p class="categoryText">対応ブランド順次拡大中！</p>
 
+    </section>
+
+    <section class="bigSection">
+        <h2 class="h2Title">新着の人気コーディネート</h2>
+
+        <div class="showPopularList">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+        </div>
+
+        <h2 class="h2Title">いいね！が多いウェア</h2>
+
+        <div class="showPopularList">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+            <img src="{{asset('/img/other/manekin001edit2.png')}}" alt="">
+        </div>
+    </section>
+
+    <section>
+        <div class="enterArea">
+            <a class="titleBtn" href="">
+                <div>新規登録はこちら</div>
+            </a>
+            <a class="titleBtn" href="">
+                <div>ログインはこちら</div>
+            </a>
+        </div>
     </section>
 
 </main>
