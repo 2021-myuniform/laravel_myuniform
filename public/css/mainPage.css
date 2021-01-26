@@ -47,6 +47,34 @@ body{
     margin: auto 20px;
 }
 
+footer{
+    background-color: black;
+}
+
+.footerList{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footerListItem{
+    padding: 10px;
+}
+
+.footerListItem a{
+    color: white;
+    font-size: 1.4em;
+}
+
+.footerText{
+    color: white;
+    font-size: 1.4em;
+}
+
+.footerTextBox{
+    text-align: center;
+    padding: 30px;
+}
+
 .selectWearList{
     width: 30%;
     margin: auto 0;

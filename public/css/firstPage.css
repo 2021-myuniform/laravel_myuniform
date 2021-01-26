@@ -47,6 +47,22 @@
     transform: translate(150%, -50%);
 }
 
+.title1Text{
+    margin: 50px auto;
+}
+
+.title1TextH2{
+    font-size: 3em;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.title1Text p{
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+}
+
 .title2Img{
     background-image: url('../img/firstLP/mainTitle2.jpg');
     object-fit: cover;
@@ -111,8 +127,24 @@
     margin: 100px auto;
 }
 
+.movieSize{
+    width: 60vw;
+    margin: auto;
+}
+
 .movieContainer{
     text-align: center;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.movieContainer iframe{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .categoryContainer{
@@ -134,4 +166,96 @@
     width: 100%;
     object-fit: cover;
     height: 250px;
+}
+
+.categoryText{
+    text-align: right;
+    font-size: 2em;
+    margin: 20px;
+}
+
+.showPopularList{
+    display: flex;
+    justify-content: space-between;
+}
+
+.showPopularList img{
+    width: 200px;
+    height: auto;
+}
+
+.enterArea{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 480px){
+
+.title1Img{
+    display: flex;
+}
+
+.titleBtnBox{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: static;
+    right: 0%;
+    top: 0%;
+    transform: none;
+}
+
+.title2Img{
+    height: auto;
+}
+
+.h2Title{
+    padding-bottom: 0;
+    padding: 50px 0;
+}
+
+.ableListContainer{
+    flex-wrap: wrap;
+    display: flex;
+    position: static;
+    top: 0%;
+    right: 0%;
+    transform: none;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.ableListBox{
+    width: 40%;
+}
+
+.movieSize{
+    width: 80%;
+}
+
+.categoryList h4{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.showPopularList{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.showPopularList img{
+    width: 150px;
+}
+
+.spTitleBtn{
+    height: 0%;
+    line-height: 1.2;
+}
+
 }
