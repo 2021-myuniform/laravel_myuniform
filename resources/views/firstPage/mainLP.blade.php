@@ -5,8 +5,8 @@
     <section>
         <div class="title1Img">
             <div class="titleBtnBox">
-                <a class="titleBtn" href="">新規登録はこちら</a>
-                <a class="titleBtn" href="">ログインはこちら</a>
+                <a class="titleBtn" href="{{ route('register') }}">新規登録はこちら</a>
+                <a class="titleBtn" href="{{ route('login') }}">ログインはこちら</a>
             </div>
         </div>
         <div class="title1Text">
@@ -57,8 +57,10 @@
 
     <section class="bigSection">
         <h2 class="h2Title">Seecsのつかい方</h2>
-        <div class="movieContainer">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/TRh-amAhOEw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="movieSize">
+            <div class="movieContainer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TRh-amAhOEw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
@@ -109,10 +111,10 @@
 
     <section>
         <div class="enterArea">
-            <a class="titleBtn" href="">
+            <a class="titleBtn spTitleBtn" href="{{ route('register') }}">
                 <div>新規登録はこちら</div>
             </a>
-            <a class="titleBtn" href="">
+            <a class="titleBtn spTitleBtn" href="{{ route('login') }}">
                 <div>ログインはこちら</div>
             </a>
         </div>
