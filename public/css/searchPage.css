@@ -347,4 +347,13 @@
     height: 100px;
 }
 
+.colorSelect{
+    width: 80vw;
+}
+
+.colorBox{
+    width: 60px;
+    height: 30px;
+}
+
 }
