@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\usersFavoriteList;
 
+use function PHPUnit\Framework\isEmpty;
+
 class MainController extends Controller
 {
     public function toFirst(Request $request)
@@ -280,6 +282,11 @@ class MainController extends Controller
         $user = Auth::user();
 
         $pantsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+
+        if(isEmpty($pantsItems)){
+            return view('mainPage.main');
+        }
+
         $pantsItemId = $pantsItems->id;
         $pantsItemUser_id = $pantsItems->user_id;
         $pantsItemType = $pantsItems->type;
