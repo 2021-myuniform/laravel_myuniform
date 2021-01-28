@@ -150,16 +150,19 @@ footer{
 }
 
 .showWearList{
-    width: 40%;
+    min-width: 400px;
     text-align: center;
     background-image: url('../img/other/manekin_background.jpg');
     object-fit: cover;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+    background-position-x: 6px;
 }
 
 .showWearList_head{
-    height: 70px;
+    height: 85px;
 }
 
 .searchItemList{
@@ -210,6 +213,7 @@ footer{
     padding: 10px;
     background-color: white;
     border: 2px solid black;
+    line-height: 1.4;
 }
 
 .searchItemList_box{
@@ -247,7 +251,7 @@ footer{
     font-weight: bold;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 700px){
 
 .displayPcOn{
     display: none;
@@ -307,6 +311,22 @@ footer{
     background-position: center;
     height: 450px;
     z-index: -1;
+    min-width: 100px;
+}
+
+.showWearList_head{
+    height: 72px;
+}
+
+.userSelectImgTops{
+    width: 160px;
+}
+.userSelectImgPants{
+    width: 110px;
+    height: 160px;
+}
+.userSelectImgShoes{
+    width: 110px;
 }
 
 .searchItemList_box{
