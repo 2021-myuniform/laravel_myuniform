@@ -283,7 +283,7 @@ class MainController extends Controller
 
         $pantsItems = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
 
-        if(isEmpty($pantsItems)){
+        if(!isset($pantsItems)){
             return view('mainPage.main');
         }
 
