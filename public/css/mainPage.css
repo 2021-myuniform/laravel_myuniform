@@ -173,6 +173,7 @@ footer{
     display: flex;
     width: 90%;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .showPrice{
@@ -203,7 +204,12 @@ footer{
 .searchListText{
     font-size: 1.4em;
     text-align: center;
-    margin: 10px;
+    /* margin: 10px; */
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
 }
 
 .searchItemList_box{
@@ -217,6 +223,28 @@ footer{
     text-align: center;
     box-shadow: 2px 2px 0px 0px grey;
     line-height: 1.2;
+    width: 300px;
+}
+
+.searchItemPrice{
+    padding: 10px;
+    text-align: right;
+    color: red;
+}
+
+.searchItemName{
+    border-bottom: 1px dotted black;
+    padding: 10px;
+    line-height: 1.4;
+}
+
+.searchItemShow{
+    width: 100%;
+}
+
+.textRed{
+    color: firebrick;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 480px){
@@ -279,6 +307,10 @@ footer{
     background-position: center;
     height: 450px;
     z-index: -1;
+}
+
+.searchItemList_box{
+    width: 140px;
 }
 
  }

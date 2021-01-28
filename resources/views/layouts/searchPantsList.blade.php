@@ -8,7 +8,8 @@
     {{-- {{$topsItemsOutputs}} --}}
 
     <div class="searchListText">
-        <p>Pantsの条件に一致したアイテム</p>
+        {{-- <p>Pantsの条件に一致したアイテム</p> --}}
+        <p>Pants : <span class="textRed">【COLOR】</span> {{$getPantsSet->color}} <span class="textRed">【BRAND】</span>{{$getPantsSet->brand}} <span class="textRed">【CATEGORY】</span>{{$getPantsSet->category}}</p>
     </div>
     @if ($pantsItemsOutputs->isEmpty())
     <div class="searchListText">
@@ -23,12 +24,13 @@
                 <li>
                    {{-- <p>{{$pantsItemsOutput->id}}</p> --}}
                    <input type="hidden" name="pantsItemsOutputId" value="{{$pantsItemsOutput->id}}">
-                   <p>{{$pantsItemsOutput->jancode}}</p>
-                   <p>{{$pantsItemsOutput->adult}}</p>
-                   <p>¥ {{number_format($pantsItemsOutput->price)}}</p>
-                   <p>{{$pantsItemsOutput->brand}}</p>
+                   <img class="searchItemShow" src="{{ asset('img/img_pants/' . $pantsItemsOutput->img) }}" alt="{{$pantsItemsOutput->img}}">
+                   <p class="searchItemName">{{$pantsItemsOutput->jancode}}</p>
+                   <p class="searchItemPrice">¥ {{number_format($pantsItemsOutput->price)}}</p>
+                   {{-- <p>{{$pantsItemsOutput->adult}}</p> --}}
+                   {{-- <p>{{$pantsItemsOutput->brand}}</p>
                    <p>{{$pantsItemsOutput->category}}</p>
-                   <p>{{$pantsItemsOutput->color}}</p>
+                   <p>{{$pantsItemsOutput->color}}</p> --}}
                 </li>
                 <input type="submit" value="選択">
             </form>
