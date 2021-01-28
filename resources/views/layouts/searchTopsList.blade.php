@@ -6,7 +6,8 @@
     {{-- {{$topsItemsOutputs}} --}}
 
     <div class="searchListText">
-        <p>Topsの条件に一致したアイテム</p>
+        {{-- <p>Topsの条件に一致したアイテム</p> --}}
+        <p>Tops : <span class="textRed">【COLOR】</span> {{$getTopsSet->color}} <span class="textRed">【BRAND】</span>{{$getTopsSet->brand}} <span class="textRed">【CATEGORY】</span>{{$getTopsSet->category}}</p>
     </div>
     @if ($topsItemsOutputs->isEmpty())
     <div class="searchListText">
@@ -21,12 +22,12 @@
                 <li>
                    {{-- <p>{{$topsItemsOutput->id}}</p> --}}
                    <input type="hidden" name="topsItemsOutputId" value="{{$topsItemsOutput->id}}">
-                   <p>{{$topsItemsOutput->jancode}}</p>
-                   <p>{{$topsItemsOutput->adult}}</p>
-                   <p>¥ {{number_format($topsItemsOutput->price)}}</p>
-                   <p>{{$topsItemsOutput->brand}}</p>
+                   <img class="searchItemShow" src="{{ asset('img/img_tops/' . $topsItemsOutput->img) }}" alt="{{$topsItemsOutput->img}}">
+                   <p class="searchItemName">{{$topsItemsOutput->jancode}}</p>
+                   <p class="searchItemPrice">¥ {{number_format($topsItemsOutput->price)}}</p>
+                   {{-- <p>{{$topsItemsOutput->brand}}</p>
                    <p>{{$topsItemsOutput->category}}</p>
-                   <p>{{$topsItemsOutput->color}}</p>
+                   <p>{{$topsItemsOutput->color}}</p> --}}
                 </li>
                 <input type="submit" value="選択">
             </form>

@@ -6,7 +6,7 @@
         <div class="title1Img">
             <div class="titleBtnBox">
                 <a class="titleBtn" href="{{ route('register') }}">新規登録はこちら</a>
-                <a class="titleBtn" href="{{ route('login') }}">ログインはこちら</a>
+                <a class="titleBtn" href="{{ route('toMain') }}">ログインはこちら</a>
             </div>
         </div>
         <div class="title1Text">
@@ -114,7 +114,7 @@
             <a class="titleBtn spTitleBtn" href="{{ route('register') }}">
                 <div>新規登録はこちら</div>
             </a>
-            <a class="titleBtn spTitleBtn" href="{{ route('login') }}">
+            <a class="titleBtn spTitleBtn" href="{{ route('toMain') }}">
                 <div>ログインはこちら</div>
             </a>
         </div>
