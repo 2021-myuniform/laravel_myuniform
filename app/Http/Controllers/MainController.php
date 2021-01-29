@@ -37,8 +37,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -48,8 +48,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -71,8 +71,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -82,8 +82,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -124,8 +124,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -135,8 +135,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -151,14 +151,14 @@ class MainController extends Controller
         $user = Auth::user();
 
         $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
-        // ddd($checkList);
+        // ddd($user->gender);
 
         if(isset($checkList)){
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -168,8 +168,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -181,6 +181,8 @@ class MainController extends Controller
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
         $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+
+        // ユーザーのFavアイテムの情報を取得
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
@@ -211,8 +213,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -222,8 +224,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -245,8 +247,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
@@ -256,8 +258,8 @@ class MainController extends Controller
             $param = [
                 'user_Id' => $user->id,
                 'type' => $request->type,
-                'gender' => $request->gender,
-                'target' => $request->target,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
                 'brand' => $request->brand,
                 'category' => $request->category,
                 'color' => $request->color,
