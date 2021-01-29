@@ -253,7 +253,7 @@ footer{
 
 /* モーダル */
 
-.topsShowItem{
+.ShowItemText{
     cursor: pointer;
 }
 
@@ -282,6 +282,13 @@ footer{
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+/* additional アイテムレイアウト */
+
+.showWearList{
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 700px){
