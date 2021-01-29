@@ -10,7 +10,7 @@
         @endif
         @endif --}}
     </div>
-    <div>
+    <a href="#topsShowItem" class="topsShowItem" rel="modal:open">
         @if (isset($userInfo))
         <p style="display: none">ユーザーのお気に入りTops</p>
         <p style="display: none">{{$userInfo->favTops}}</p>
@@ -18,7 +18,20 @@
         <img class="userSelectImgTops" src="{{ asset('img/img_tops/' . $getTopsImg->img) }}" alt="{{$getTopsImg->img}}">
         @endif
         @endif
-    </div>
+
+        <!-- Modal HTML embedded directly into document -->
+        @if (isset($getTopsImg->jancode))
+        <div id="topsShowItem" class="modal showItemModal">
+         <p class="modalBtnText">Tops : </p>
+         <p class="modalBtnText">商品名 : {{$getTopsImg->jancode}}</p>
+         <p class="modalBtnText">購入ページに飛びますか？</p>
+         <div class="modalBtn">
+            <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
+            <a class="modalBtnSet" href="{{$getTopsImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
+         </div>
+        </div>
+        @endif
+    </a>
     <div>
         @if (isset($userInfo))
         <p style="display: none">ユーザーのお気に入りPants</p>

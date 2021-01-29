@@ -251,6 +251,39 @@ footer{
     font-weight: bold;
 }
 
+/* モーダル */
+
+.topsShowItem{
+    cursor: pointer;
+}
+
+.showItemModal{
+    font-size: 1.6em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.modalBtnText{
+    color: black;
+}
+
+.modalBtn{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modalBtnSet{
+    background-color: black;
+    color: white;
+    width: 150px;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 700px){
 
 .displayPcOn{
@@ -310,7 +343,7 @@ footer{
     background-repeat: no-repeat;
     background-position: center;
     height: 450px;
-    z-index: -1;
+    /* z-index: -1; */
     min-width: 100px;
 }
 
@@ -331,6 +364,17 @@ footer{
 
 .searchItemList_box{
     width: 140px;
+}
+
+/* モーダル */
+
+.modalBtn{
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalBtnSet{
+    margin: 10px;
 }
 
  }
