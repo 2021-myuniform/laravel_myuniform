@@ -19,6 +19,18 @@
     background-color: rgba(243, 244, 246, 0.2);
 }
 
+/* login */
+
+.loginBtnArea{
+    padding: 10px 0;
+}
+
+.userRegister{
+    text-align: right;
+    border-top: 1px dotted gray;
+    padding: 10px 0;
+}
+
 @media screen and (max-width: 700px){
 
     .pt-6{
