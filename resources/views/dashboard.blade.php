@@ -5,6 +5,21 @@
         </h2>
     </x-slot>
 
+    <section>
+        <div>
+            <div class="center">
+                {{-- {{$uploads}} --}}
+
+                @if (!isset($uploads->userImgPath))
+                <a href="{{ route('upload_form')}}">アイコンを設定する</a>
+                @else
+                <img class="userImg" src="{{ asset(Storage::url($uploads->userImgPath)) }}" alt="">
+                <a href="{{ route('upload_form')}}">アイコンを変更する</a>
+                @endif
+            </div>
+        </div>
+    </section>
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

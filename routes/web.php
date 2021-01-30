@@ -27,9 +27,7 @@ Route::get('/main', function () {
     return view('contents.main');
 })->name('main')->middleware(['auth']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', 'App\Http\Controllers\MainController@showDashboard')->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -79,4 +77,12 @@ Route::post('searchShoes/changeFind', 'App\Http\Controllers\MainController@chang
 
 Route::get('intro', 'App\Http\Controllers\MainController@intro')->name('intro')->middleware(['auth']);
 
+// 画像アップロード
 
+Route::get('/form',
+	[App\Http\Controllers\UploadImageController::class, "show"]
+	)->name("upload_form")->middleware(['auth']);
+
+Route::post('/upload',
+	[App\Http\Controllers\UploadImageController::class, "upload"]
+	)->name("upload_image")->middleware(['auth']);
