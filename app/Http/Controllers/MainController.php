@@ -6,11 +6,23 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\usersFavoriteList;
+use App\Models\User;
 
 use function PHPUnit\Framework\isEmpty;
 
 class MainController extends Controller
 {
+    public function showDashboard(){
+        $user = Auth::user();
+
+        //アップロードした画像を取得
+        $uploads = User::find($user->id);
+
+		return view("dashboard",[
+			"uploads" => $uploads
+		]);
+    }
+
     public function toFirst(Request $request)
     {
         return view('firstPage.main');

@@ -1,3 +1,7 @@
+.center{
+    text-align: center;
+}
+
 /* register画面 */
 
 .genderBox{
@@ -48,6 +52,17 @@
 
 .whiteText{
     color: white;
+}
+
+/* ダッシュボード */
+
+.userImg{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 50%;
+    border: 5px solid gray;
 }
 
 @media screen and (max-width: 700px){
