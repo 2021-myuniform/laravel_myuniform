@@ -162,7 +162,20 @@ footer{
 }
 
 .showWearList_head{
-    height: 85px;
+    height: 40px;
+}
+
+.userFaceImg{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    transform: translateX(6px);
+    border-radius: 50%;
+}
+
+.faceNoImg{
+    width: 40px;
+    height: 40px;
 }
 
 .searchItemList{

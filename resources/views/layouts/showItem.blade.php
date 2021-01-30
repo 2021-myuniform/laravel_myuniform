@@ -2,13 +2,18 @@
 
 <div class="showWearList">
     <div class="showWearList_head">
-        {{-- @if (isset($userInfo))
-        <p style="display: none">ユーザーのお気に入りTops</p>
-        <p style="display: none">{{$userInfo->favTops}}</p>
-        @if (isset($getTopsImg))
-        <img class="userSelectImgTops" src="{{ asset('img/img_tops/' . $getTopsImg->img) }}" alt="{{$getTopsImg->img}}">
-        @endif
-        @endif --}}
+
+    </div>
+    <div>
+        <div>
+
+
+            @if (!isset($userInfo->userImgPath))
+            <div class="faceNoImg"></div>
+            @else
+            <img class="userFaceImg" class="userImg" src="{{ asset(Storage::url($userInfo->userImgPath)) }}" alt="">
+            @endif
+        </div>
     </div>
     <a href="#topsShowItem" class="ShowItem" rel="modal:open">
         @if (isset($userInfo))
