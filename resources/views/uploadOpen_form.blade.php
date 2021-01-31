@@ -20,15 +20,15 @@
     @endif
 
     <div class="iconImgArea">
-        <p>マネキン用アイコン</p>
+        <p>ユーザーアイコン</p>
         <form
-            method="post"
-            action="{{ route('upload_image') }}"
-            enctype="multipart/form-data"
-        >
-            @csrf
-            <input type="file" name="image" accept="image/png, image/jpeg">
-            <input type="submit" value="Upload">
+         method="post"
+         action="{{ route('upload_imageOpen') }}"
+         enctype="multipart/form-data"
+>
+        @csrf
+        <input type="file" name="image" accept="image/png, image/jpeg">
+        <input type="submit" value="Upload">
         </form>
     </div>
 </body>

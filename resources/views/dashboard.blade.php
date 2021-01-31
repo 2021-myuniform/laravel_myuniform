@@ -6,15 +6,21 @@
     </x-slot>
 
     <section>
-        <div>
-            <div class="center">
-                {{-- {{$uploads}} --}}
-
+        <div class="imgContainer">
+            <div class="center imgContainerList">
                 @if (!isset($uploads->userImgPath))
-                <a href="{{ route('upload_form')}}">アイコンを設定する</a>
+                <a href="{{ route('upload_form')}}">マネキンアイコンを設定する</a>
                 @else
                 <img class="userImg" src="{{ asset(Storage::url($uploads->userImgPath)) }}" alt="">
-                <a href="{{ route('upload_form')}}">アイコンを変更する</a>
+                <a href="{{ route('upload_form')}}">マネキンアイコンを変更する</a>
+                @endif
+            </div>
+            <div class="center imgContainerList">
+                @if (!isset($uploads->userOpenImgPath))
+                <a href="{{ route('uploadUser_form')}}">ユーザーアイコンを設定する</a>
+                @else
+                <img class="userImg" src="{{ asset(Storage::url($uploads->userOpenImgPath)) }}" alt="">
+                <a href="{{ route('uploadUser_form')}}">ユーザーアイコンを変更する</a>
                 @endif
             </div>
         </div>
