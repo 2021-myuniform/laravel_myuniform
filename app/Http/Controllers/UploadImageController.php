@@ -44,5 +44,35 @@ class UploadImageController extends Controller
 		}
 		return redirect("/dashboard");
     }
-    
+
+    function showOpen(){
+		return view("uploadOpen_form");
+	}
+
+	function uploadOpen(Request $request){
+        $request->validate([
+			'image' => 'required|file|image|mimes:png,jpeg'
+		]);
+		$upload_image = $request->file('image');
+
+		if($upload_image) {
+			//アップロードされた画像を保存する
+			$path = $upload_image->store('uploads',"public");
+			//画像の保存に成功したらDBに記録する
+
+            if($path){
+                $user = Auth::user();
+
+                $param = [
+                    'userOpenImgName' => $upload_image->getClientOriginalName(),
+                    'userOpenImgPath' => $path,
+                ];
+
+
+                DB::table('users')->where('id', $user->id)->update($param);
+            }
+		}
+		return redirect("/dashboard");
+    }
+
 }

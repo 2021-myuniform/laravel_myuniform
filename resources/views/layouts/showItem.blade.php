@@ -6,8 +6,6 @@
     </div>
     <div>
         <div>
-
-
             @if (!isset($userInfo->userImgPath))
             <div class="faceNoImg"></div>
             @else

@@ -85,4 +85,12 @@ Route::get('/form',
 
 Route::post('/upload',
 	[App\Http\Controllers\UploadImageController::class, "upload"]
-	)->name("upload_image")->middleware(['auth']);
+    )->name("upload_image")->middleware(['auth']);
+
+Route::get('/formOpen',
+        [App\Http\Controllers\UploadImageController::class, "showOpen"]
+        )->name("uploadUser_form")->middleware(['auth']);
+
+Route::post('/upload',
+	[App\Http\Controllers\UploadImageController::class, "uploadOpen"]
+	)->name("upload_imageOpen")->middleware(['auth']);
