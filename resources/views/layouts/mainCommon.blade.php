@@ -30,6 +30,18 @@
         @yield('showItem')
 
         @yield('showPrice')
+
+    </div>
+    <div>
+        <form action="{{ route('saveFav') }}" method="post">
+            @csrf
+
+            <input type="hidden" name="favTops" value="{{$userInfo->favTops}}">
+            <input type="hidden" name="favPants" value="{{$userInfo->favPants}}">
+            <input type="hidden" name="favShoes" value="{{$userInfo->favShoes}}">
+
+            <input type="submit" value="お気に入り登録">
+        </form>
     </div>
 
 
