@@ -59,6 +59,10 @@ Route::get('select/shoes', 'App\Http\Controllers\SelectWearController@selectShoe
 
 Route::post('select/shoes', 'App\Http\Controllers\SelectWearController@sendShoes')->name('sendShoes')->middleware(['auth']);
 
+// お気に入りコーデ登録
+
+Route::post('saveFav', 'App\Http\Controllers\MainController@saveFav')->name('saveFav')->middleware(['auth']);
+
 // ジャンルごとの条件検索
 
 Route::get('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsFind')->name('changeTops')->middleware(['auth']);
@@ -91,6 +95,6 @@ Route::get('/formOpen',
         [App\Http\Controllers\UploadImageController::class, "showOpen"]
         )->name("uploadUser_form")->middleware(['auth']);
 
-Route::post('/upload',
+Route::post('/uploadOpen',
 	[App\Http\Controllers\UploadImageController::class, "uploadOpen"]
 	)->name("upload_imageOpen")->middleware(['auth']);

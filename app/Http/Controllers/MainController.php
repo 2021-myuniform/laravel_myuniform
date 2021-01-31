@@ -360,4 +360,23 @@ class MainController extends Controller
     {
         return view('intro.welcome');
     }
+
+    public function saveFav(Request $request)
+    {
+        // ddd($request->favTops);
+
+        $user = Auth::user();
+
+        $param = [
+            'user_Id' => $user->id,
+            'favTops' => $request->favTops,
+            'favPants' => $request->favPants,
+            'favShoes' => $request->favShoes,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        DB::table('usersFavoriteOutfits')->insert($param);
+
+        return view('mainPage.saveFav');
+    }
 }
