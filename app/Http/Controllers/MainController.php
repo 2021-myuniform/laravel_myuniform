@@ -367,6 +367,8 @@ class MainController extends Controller
 
         $user = Auth::user();
 
+        // ddd($request->img);
+
         $param = [
             'user_Id' => $user->id,
             'favTops' => $request->favTops,
@@ -374,9 +376,26 @@ class MainController extends Controller
             'favShoes' => $request->favShoes,
             'created_at' => now(),
             'updated_at' => now(),
+            'outfitSetImg' => $request->canvasTest,
+            'title' => $request->title,
+            'openText' => $request->openText,
+            'closeText' => $request->closeText,
         ];
         DB::table('usersFavoriteOutfits')->insert($param);
 
         return view('mainPage.saveFav');
+    }
+
+    public function showMyFavList()
+    {
+        $user = Auth::user();
+
+        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->get();
+
+        // $test = base64_decode($userData->outfitSetImg);
+        // ddd($test);
+
+        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user]);
+
     }
 }
