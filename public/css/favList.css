@@ -1,0 +1,18 @@
+.favSection{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.favListBox{
+    padding: 30px;
+    font-size: 1.6em;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.favListImg{
+    width: 300px;
+}

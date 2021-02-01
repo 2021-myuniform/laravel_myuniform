@@ -1,6 +1,6 @@
 @section('showItem')
 
-<div class="showWearList">
+<div class="showWearList" id="showWearList">
     <div class="showWearList_head">
 
     </div>

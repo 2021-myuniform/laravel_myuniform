@@ -24,7 +24,7 @@
     @yield('header')
     @yield('headerList')
 
-    <div class="showWearItem">
+    <div class="showWearItem" id="showWearItem">
         @yield('selectWear')
 
         @yield('showItem')
@@ -33,21 +33,37 @@
 
     </div>
     <div>
-        <form action="{{ route('saveFav') }}" method="post">
+        <form id="favForm" action="{{ route('saveFav') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="favTops" value="{{$userInfo->favTops}}">
             <input type="hidden" name="favPants" value="{{$userInfo->favPants}}">
             <input type="hidden" name="favShoes" value="{{$userInfo->favShoes}}">
 
-            <input type="submit" value="お気に入り登録">
+            {{-- <img src="" alt="" id="canvas-image" name="canvasImg" value=""> --}}
+            <input type="hidden" id="canvas-test" name="canvasTest" value="">
+            <input type="text" name="title">
+            <input type="text" name="openText">
+            <input type="text" name="closeText">
+            <input type="submit" value="お気に入り登録" onclick="submitImg()">
         </form>
     </div>
 
 
     @yield('footer')
 
+
     @yield('mainJs')
+
+    <script type="text/javascript">
+        html2canvas(document.querySelector("#showWearList")).then(canvas => {
+        // var imageData = canvas.toDataURL();
+        // imgタグに画像として、canvasの内容を挿入
+        // document.getElementById('canvas-image').setAttribute("src",canvas.toDataURL());
+        document.getElementById('canvas-test').setAttribute("value",canvas.toDataURL());
+      });
+      </script>
+
 
 </body>
 </html>

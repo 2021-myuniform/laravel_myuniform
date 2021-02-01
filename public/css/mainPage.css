@@ -17,9 +17,12 @@ body{
 
 .headerTitle{
     color: white;
-    font-size: 3em;
     border-bottom: 1px solid white;
     font-family: 'Cinzel', serif;
+}
+
+.h1Title{
+    font-size: 3em !important;
 }
 
 .headerTitle h1{

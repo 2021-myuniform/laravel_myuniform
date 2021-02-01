@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\MainController@toFirst')->name('toFirst');
 
-Route::get('/main', function () {
-    return view('contents.main');
-})->name('main')->middleware(['auth']);
+// Route::get('/main', function () {
+//     return view('contents.main');
+// })->name('main')->middleware(['auth']);
 
 Route::get('/dashboard', 'App\Http\Controllers\MainController@showDashboard')->middleware(['auth'])->name('dashboard');
 
@@ -62,6 +62,8 @@ Route::post('select/shoes', 'App\Http\Controllers\SelectWearController@sendShoes
 // お気に入りコーデ登録
 
 Route::post('saveFav', 'App\Http\Controllers\MainController@saveFav')->name('saveFav')->middleware(['auth']);
+
+Route::get('showMyList', 'App\Http\Controllers\MainController@showMyFavList')->name('showMyFavList')->middleware(['auth']);
 
 // ジャンルごとの条件検索
 
