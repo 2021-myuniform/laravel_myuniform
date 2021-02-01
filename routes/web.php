@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\MainController@toFirst')->name('toFirst');
 
-Route::get('/main', function () {
-    return view('contents.main');
-})->name('main')->middleware(['auth']);
+// Route::get('/main', function () {
+//     return view('contents.main');
+// })->name('main')->middleware(['auth']);
 
 Route::get('/dashboard', 'App\Http\Controllers\MainController@showDashboard')->middleware(['auth'])->name('dashboard');
 

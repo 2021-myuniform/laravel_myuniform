@@ -11,7 +11,5 @@
 
 @include('layouts.header')
 
-@include('layouts.headerList')
-
 @include('favOutfits.myFavOutfits')
 

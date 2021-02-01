@@ -8,9 +8,9 @@
         <div>
             <img class="favListImg" src="{{$item->outfitSetImg}}" alt="image">
         </div>
-        <p>{{$item->created_at->format('Y年m月d日')}}</p>
-        <h3>{{$item->title}}</h3>
-        <p>{{$user->name}}</p>
+        <p>{{$item->created_at}}</p>
+        <h3>タイトル : {{$item->title}}</h3>
+        <p>投稿者 : {{$user->name}}</p>
     </div>
 
     @endforeach

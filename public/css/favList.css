@@ -8,6 +8,9 @@
 
 .favListBox{
     padding: 30px;
+    font-size: 1.6em;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .favListImg{
