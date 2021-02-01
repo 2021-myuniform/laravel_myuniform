@@ -16,3 +16,15 @@
 .favListImg{
     width: 300px;
 }
+
+@media screen and (max-width: 700px){
+
+    .favListBox{
+        padding: 10px;
+        width: 150px;
+    }
+
+    .favListImg{
+        width: 100%;
+    }
+}
