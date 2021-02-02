@@ -23,12 +23,30 @@
         </div>
     @endif
 
+    @if (isset($getCapsImg))
+        <div class="showPriceList">
+            <p class="showPriceList_item">キャップ : {{$getCapsImg->brand}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getCapsImg->price)}}</p>
+        </div>
+    @endif
 
-    @if (isset($getTopsImg->price) || isset($getPantsImg->price) || isset($getShoesImg->price))
+    @if (isset($getSocksImg))
+        <div class="showPriceList">
+            <p class="showPriceList_item">ソックス : {{$getSocksImg->brand}}</p>
+            <p class="showPriceList_price">¥ {{number_format($getSocksImg->price)}}</p>
+        </div>
+    @endif
+
+
+    @if (isset($getTopsImg->price) || isset($getPantsImg->price) || isset($getShoesImg->price) || isset($getCapsImg->price) || isset($getSocksImg->price))
         <div class="showPriceList">
             <p class="showPriceList_item">合計金額</p>
             <p class="showPriceList_price">¥
-                @if(isset($getTopsImg->price) && isset($getPantsImg->price) && isset($getShoesImg->price))
+                @if(isset($getTopsImg->price) && isset($getPantsImg->price) && isset($getShoesImg->price) && isset($getCapsImg->price) && isset($getSocksImg->price))
+                {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price + $getCapsImg->price + $getSocksImg->price)}}
+                @elseif(isset($getTopsImg->price) && isset($getPantsImg->price) && isset($getShoesImg->price) && isset($getCapsImg->price))
+                {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price + $getCapsImg->price)}}
+                @elseif(isset($getTopsImg->price) && isset($getPantsImg->price) && isset($getShoesImg->price))
                 {{number_format($getTopsImg->price + $getPantsImg->price + $getShoesImg->price)}}
                 @elseif(isset($getTopsImg->price) && isset($getPantsImg->price))
                 {{number_format($getTopsImg->price + $getPantsImg->price)}}
@@ -42,15 +60,13 @@
                 {{number_format($getPantsImg->price)}}
                 @elseif (isset($getShoesImg->price))
                 {{number_format($getShoesImg->price)}}
+                @elseif (isset($getCapsImg->price))
+                {{number_format($getCapsImg->price)}}
+                @elseif (isset($getSocksImg->price))
+                {{number_format($getSocksImg->price)}}
                 @endif
         </div>
     @endif
-
-    {{-- {{$getShoesImg->price + $getTopsImg->price}} --}}
-
-    {{-- @foreach ($getTopsImg as $item)
-        <p>{{$item}}</p>
-    @endforeach --}}
 </div>
 
 @endsection

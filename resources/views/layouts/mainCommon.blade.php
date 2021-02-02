@@ -40,7 +40,6 @@
             <input type="hidden" name="favPants" value="{{$userInfo->favPants}}">
             <input type="hidden" name="favShoes" value="{{$userInfo->favShoes}}">
 
-            {{-- <img src="" alt="" id="canvas-image" name="canvasImg" value=""> --}}
             <dl class="inputArea">
                 <input type="hidden" id="canvas-test" name="canvasTest" value="">
 
@@ -69,6 +68,9 @@
         </form>
     </div>
 
+            {{-- <img src="" alt="" id="canvas-image" name="canvasImg" value=""> --}}
+
+
 
     @yield('footer')
 
@@ -76,7 +78,7 @@
     @yield('mainJs')
 
     <script type="text/javascript">
-        html2canvas(document.querySelector("#showWearList")).then(canvas => {
+        html2canvas(document.querySelector("#showWearList"),{width: 170, height:450}).then(canvas => {
         // var imageData = canvas.toDataURL();
         // imgタグに画像として、canvasの内容を挿入
         // document.getElementById('canvas-image').setAttribute("src",canvas.toDataURL());
