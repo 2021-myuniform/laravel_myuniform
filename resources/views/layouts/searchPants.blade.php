@@ -11,7 +11,7 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのパンツカラーについてお答えください。</p>
+        <p>ここではお探しのパンツについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">

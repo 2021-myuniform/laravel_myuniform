@@ -2,6 +2,10 @@
     font-size:62.5%;
 } */
 
+.blocker{
+    z-index: 100 !important;
+}
+
 body{
     font-size: 62.5%;
     font-family: 'Noto Sans JP', sans-serif;
@@ -46,8 +50,8 @@ body{
 .headerList_select{
     color: white;
     justify-content: center;
-    font-size: 1.8em;
-    margin: auto 20px;
+    font-size: 1.4em;
+    margin: auto 16px;
 }
 
 footer{
@@ -144,12 +148,39 @@ footer{
 .userSelectImgTops{
     width: 150px;
 }
+
 .userSelectImgPants{
     width: 100px;
-    height: 150px;
+    height: 120px;
 }
+
 .userSelectImgShoes{
     width: 100px;
+}
+
+.userSelectImgCaps{
+    width: 100px;
+    z-index: 100;
+}
+
+.userSelectImgSocks{
+    width: 100px;
+    display: none;
+}
+
+.socksImg{
+    display: flex;
+    justify-content: center;
+}
+
+.socksBox{
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    border-radius: 6px 6px 0 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .showWearList{
@@ -166,6 +197,7 @@ footer{
 
 .showWearList_head{
     height: 40px;
+    z-index: 100;
 }
 
 .userFaceImg{
@@ -265,6 +297,29 @@ footer{
 .textRed{
     color: firebrick;
     font-weight: bold;
+}
+
+/* インプットエリア */
+
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.inputArea dt{
+    font-size: 1.6em;
+    padding: 6px;
+}
+
+.inputArea input[type="text"]{
+    width: 80%;
+}
+
+.inputArea dd{
+    padding: 6px;
 }
 
 /* モーダル */
@@ -379,7 +434,7 @@ footer{
 }
 
 .showWearList_head{
-    height: 72px;
+    height: 40px;
 }
 
 .userSelectImgTops{
@@ -387,7 +442,7 @@ footer{
 }
 .userSelectImgPants{
     width: 110px;
-    height: 160px;
+    height: 140px;
 }
 .userSelectImgShoes{
     width: 110px;
@@ -395,6 +450,11 @@ footer{
 
 .searchItemList_box{
     width: 140px;
+}
+
+.userFaceImg{
+    width: 30px;
+    height: 30px;
 }
 
 /* モーダル */

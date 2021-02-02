@@ -11,22 +11,22 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのシューズについてお答えください。</p>
+        <p>ここではお探しのキャップスについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">
         <img class="mannequinImg" src="{{ asset('img/other/manekin_background.jpg') }}" alt="">
-        <div class="mannequinShoes"></div>
+        <div class="mannequinCaps"></div>
     </div>
 
     {{-- <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post"> --}}
-    <form action="{{ route('searchShoesRegister') }}" method="post">
+    <form action="{{ route('searchCapsRegister') }}" method="post">
         @csrf
 
-        <input type="hidden" name="type" value="shoes">
+        <input type="hidden" name="type" value="caps">
 
         <div class="ask">
-            <p>お探しのシューズカラーを教えてください。</p>
+            <p>お探しのキャップカラーを教えてください。</p>
         </div>
 
         <div>
@@ -149,32 +149,26 @@
             </ul>
         </div> --}}
 
-        <div class="ask">
-            <p>お探しのシューズのタイプをお選びください。</p>
+        {{-- <div class="ask">
+            <p>お探しのウェアのタイプをお選びください。</p>
         </div>
 
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="all" id="allCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
                     <div class="categoryText">
-                        オールコート
+                        ロング
                     </div>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="clay" id="clayCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="half" id="halfCategory">
                     <div class="categoryText">
-                        オムニ・クレー
-                    </div>
-                </li>
-                <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="carpet" id="carpetCategory">
-                    <div class="categoryText">
-                        カーペット
+                        ショート
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> --}}
 
         <div class="nextBtnBox">
             <input class="nextBtn" type="submit" value="次に進む">

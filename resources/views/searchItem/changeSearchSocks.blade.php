@@ -1,3 +1,14 @@
+@extends('layouts.searchCommon')
+
+@section('mainCss')
+<link rel="stylesheet" href="{{ asset('css/mainPage.css') }}">
+<link rel="stylesheet" href="{{ asset('css/searchPage.css') }}">
+@endsection
+
+@include('layouts.header')
+
+@section('searchItemName')
+
 @section('searchItemName')
 
 <div class="searchContainer">
@@ -11,7 +22,7 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのシューズについてお答えください。</p>
+        <p>ここではお探しのソックスについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">
@@ -20,13 +31,13 @@
     </div>
 
     {{-- <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post"> --}}
-    <form action="{{ route('searchShoesRegister') }}" method="post">
+    <form action="{{ route('registerChangeSocks') }}" method="post">
         @csrf
 
-        <input type="hidden" name="type" value="shoes">
+        <input type="hidden" name="type" value="socks">
 
         <div class="ask">
-            <p>お探しのシューズカラーを教えてください。</p>
+            <p>お探しのソックスカラーを教えてください。</p>
         </div>
 
         <div>
@@ -107,70 +118,22 @@
             </ul>
         </div>
 
-        {{-- <div class="ask">
-            <p>お探しの性別を選んでください。</p>
-        </div>
-
-        <div>
-            <ul class="genderSelect">
-                <li class="genderSelectList">
-                    <input class="genderSelectInput" type="radio" name="gender" value="male" id="maleGender">
-                    <div class="genderText">
-                        男性
-                    </div>
-                </li>
-                <li class="genderSelectList">
-                    <input class="genderSelectInput" type="radio" name="gender" value="female" id="femaleGender">
-                    <div class="genderText">
-                        女性
-                    </div>
-                </li>
-            </ul>
-        </div> --}}
-
-        {{-- <div class="ask">
-            <p>お探しの対象を教えてください。</p>
-        </div>
-
-        <div>
-            <ul class="targetSelect">
-                <li class="targetSelectList">
-                    <input class="targetSelectInput" type="radio" name="target" value="adult" id="adultTarget">
-                    <div class="targetText">
-                        大人
-                    </div>
-                </li>
-                <li class="targetSelectList">
-                    <input class="targetSelectInput" type="radio" name="target" value="child" id="childTarget">
-                    <div class="targetText">
-                        子供
-                    </div>
-                </li>
-            </ul>
-        </div> --}}
-
         <div class="ask">
-            <p>お探しのシューズのタイプをお選びください。</p>
+            <p>お探しのソックスタイプをお選びください。</p>
         </div>
 
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="all" id="allCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="short" id="shortCategory">
                     <div class="categoryText">
-                        オールコート
+                        ショート
                     </div>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="clay" id="clayCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
                     <div class="categoryText">
-                        オムニ・クレー
-                    </div>
-                </li>
-                <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="carpet" id="carpetCategory">
-                    <div class="categoryText">
-                        カーペット
+                        ロング
                     </div>
                 </li>
             </ul>

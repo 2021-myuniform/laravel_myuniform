@@ -11,7 +11,7 @@
     </div>
 
     <div class="introText">
-        <p>ここではお探しのシューズについてお答えください。</p>
+        <p>ここではお探しのソックスについてお答えください。</p>
     </div>
 
     <div class="mannequinSect">
@@ -20,13 +20,13 @@
     </div>
 
     {{-- <form action="http://localhost/laravel_myuniform/public/searchTops/find" method="post"> --}}
-    <form action="{{ route('searchShoesRegister') }}" method="post">
+    <form action="{{ route('searchSocksRegister') }}" method="post">
         @csrf
 
-        <input type="hidden" name="type" value="shoes">
+        <input type="hidden" name="type" value="socks">
 
         <div class="ask">
-            <p>お探しのシューズカラーを教えてください。</p>
+            <p>お探しのソックスカラーを教えてください。</p>
         </div>
 
         <div>
@@ -150,27 +150,21 @@
         </div> --}}
 
         <div class="ask">
-            <p>お探しのシューズのタイプをお選びください。</p>
+            <p>お探しのソックスタイプをお選びください。</p>
         </div>
 
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="all" id="allCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="short" id="shortCategory">
                     <div class="categoryText">
-                        オールコート
+                        ショート
                     </div>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="clay" id="clayCategory">
+                    <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
                     <div class="categoryText">
-                        オムニ・クレー
-                    </div>
-                </li>
-                <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="carpet" id="carpetCategory">
-                    <div class="categoryText">
-                        カーペット
+                        ロング
                     </div>
                 </li>
             </ul>

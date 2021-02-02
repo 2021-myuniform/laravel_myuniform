@@ -263,10 +263,6 @@
     margin: 20px;
 }
 
-.nextBtn{
-
-}
-
 /* SearchPants */
 
 .mannequinPants{
@@ -297,6 +293,22 @@
     right: 0;
     left: 0;
     opacity: 0.5;
+}
+
+/* searchCaps */
+
+.mannequinCaps{
+    width: 70px;
+    content: '';
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+    height: 40px;
+    margin: auto;
+
 }
 
 /* yourList */

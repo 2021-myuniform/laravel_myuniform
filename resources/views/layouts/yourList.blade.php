@@ -14,25 +14,6 @@
 </div>
 
 <div class="itemList">
-    <p>Pantsの条件に一致したアイテム</p>
-    @if ($pantsItemsOutputs->isEmpty())
-        <p>条件にあったアイテムはありませんでした。</p>
-    @endif
-    @foreach ($pantsItemsOutputs as $pantsItemsOutput)
-     <li>
-        <p>{{$pantsItemsOutput->id}}</p>
-        <p>{{$pantsItemsOutput->jancode}}</p>
-        <p>{{$pantsItemsOutput->adult}}</p>
-        <p>{{$pantsItemsOutput->price}}</p>
-        <p>{{$pantsItemsOutput->brand}}</p>
-        <p>{{$pantsItemsOutput->category}}</p>
-        <p>{{$pantsItemsOutput->color}}</p>
-     </li>
-    @endforeach
-</div>
-
-
-<div class="itemList">
     <p>Topsの条件に一致したアイテム</p>
     @if ($topsItemsOutputs->isEmpty())
         <p>条件にあったアイテムはありませんでした。</p>
@@ -51,6 +32,24 @@
 </div>
 
 <div class="itemList">
+    <p>Pantsの条件に一致したアイテム</p>
+    @if ($pantsItemsOutputs->isEmpty())
+        <p>条件にあったアイテムはありませんでした。</p>
+    @endif
+    @foreach ($pantsItemsOutputs as $pantsItemsOutput)
+     <li>
+        <p>{{$pantsItemsOutput->id}}</p>
+        <p>{{$pantsItemsOutput->jancode}}</p>
+        <p>{{$pantsItemsOutput->adult}}</p>
+        <p>{{$pantsItemsOutput->price}}</p>
+        <p>{{$pantsItemsOutput->brand}}</p>
+        <p>{{$pantsItemsOutput->category}}</p>
+        <p>{{$pantsItemsOutput->color}}</p>
+     </li>
+    @endforeach
+</div>
+
+<div class="itemList">
     <p>Shoesの条件に一致したアイテム</p>
     @if ($shoesItemsOutputs->isEmpty())
         <p>条件にあったアイテムはありませんでした。</p>
@@ -64,6 +63,39 @@
         <p>{{$shoesItemsOutput->brand}}</p>
         <p>{{$shoesItemsOutput->category}}</p>
         <p>{{$shoesItemsOutput->color}}</p>
+     </li>
+    @endforeach
+</div>
+
+<div class="itemList">
+    <p>Capsの条件に一致したアイテム</p>
+    @if ($capsItemsOutputs->isEmpty())
+        <p>条件にあったアイテムはありませんでした。</p>
+    @endif
+    @foreach ($capsItemsOutputs as $capsItemsOutput)
+     <li>
+        <p>{{$capsItemsOutput->id}}</p>
+        <p>{{$capsItemsOutput->jancode}}</p>
+        <p>{{$capsItemsOutput->price}}</p>
+        <p>{{$capsItemsOutput->brand}}</p>
+        <p>{{$capsItemsOutput->color}}</p>
+     </li>
+    @endforeach
+</div>
+
+<div class="itemList">
+    <p>Socksの条件に一致したアイテム</p>
+    @if ($capsItemsOutputs->isEmpty())
+        <p>条件にあったアイテムはありませんでした。</p>
+    @endif
+    @foreach ($capsItemsOutputs as $capsItemsOutput)
+     <li>
+        <p>{{$capsItemsOutput->id}}</p>
+        <p>{{$capsItemsOutput->jancode}}</p>
+        <p>{{$capsItemsOutput->price}}</p>
+        <p>{{$capsItemsOutput->brand}}</p>
+        <p>{{$capsItemsOutput->category}}</p>
+        <p>{{$capsItemsOutput->color}}</p>
      </li>
     @endforeach
 </div>
