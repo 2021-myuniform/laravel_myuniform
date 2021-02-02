@@ -267,6 +267,29 @@ footer{
     font-weight: bold;
 }
 
+/* インプットエリア */
+
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+.inputArea dt{
+    font-size: 1.6em;
+    padding: 6px;
+}
+
+.inputArea input[type="text"]{
+    width: 80%;
+}
+
+.inputArea dd{
+    padding: 6px;
+}
+
 /* モーダル */
 
 .ShowItemText{

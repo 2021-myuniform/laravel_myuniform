@@ -41,11 +41,31 @@
             <input type="hidden" name="favShoes" value="{{$userInfo->favShoes}}">
 
             {{-- <img src="" alt="" id="canvas-image" name="canvasImg" value=""> --}}
-            <input type="hidden" id="canvas-test" name="canvasTest" value="">
-            <input type="text" name="title">
-            <input type="text" name="openText">
-            <input type="text" name="closeText">
-            <input type="submit" value="お気に入り登録" onclick="submitImg()">
+            <dl class="inputArea">
+                <input type="hidden" id="canvas-test" name="canvasTest" value="">
+
+                <dt>
+                    コーディネートのタイトル
+                </dt>
+                <dd>
+                    <input type="text" name="title" id="title">
+                </dd>
+                <dt>
+                    コーディネートの説明
+                </dt>
+                <dd>
+                    <input type="text" name="openText" id="openText">
+                </dd>
+                <dt>
+                    個人用メモ
+                </dt>
+                <dd>
+                    <input type="text" name="closeText" id="closeText">
+                </dd>
+                <div>
+                    <input type="submit" value="お気に入り登録" onclick="submitImg()">
+                </div>
+            </dl>
         </form>
     </div>
 
