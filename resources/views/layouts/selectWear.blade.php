@@ -87,7 +87,7 @@
             <div class="selectWearList_socks selectWearList_list">
                 <a href="{{ route('selectSocks') }}">
                 <div class="selectWearList_contents">
-                Capsを選ぶ
+                Socksを選ぶ
                 <p>カラー:{{$getSocksSet->color}}</p>
                 <p>ブランド:{{$getSocksSet->brand}}</p>
                 {{-- <p>対象:{{$getSocksSet->gender}}</p> --}}

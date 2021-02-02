@@ -400,6 +400,11 @@ class MainController extends Controller
         return view('searchItem.searchSocks');
     }
 
+    public function changeSocksFind(Request $request)
+    {
+        return view('searchItem.changeSearchSocks');
+    }
+
     public function socksRegister(Request $request)
     {
         $user = Auth::user();
@@ -432,6 +437,53 @@ class MainController extends Controller
         }
         // return view('searchItem.yourList', ['input' => '']);
         return redirect('/yourlist');
+    }
+
+    public function changeSocksRegister(Request $request)
+    {
+        $user = Auth::user();
+
+        $checkList = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->first();
+        // ddd($checkList);
+
+        if(isset($checkList)){
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->update($param);
+        }else{
+            $param = [
+                'user_Id' => $user->id,
+                'type' => $request->type,
+                'gender' => $user->gender,
+                // 'target' => $request->target,
+                'brand' => $request->brand,
+                'category' => $request->category,
+                'color' => $request->color,
+            ];
+            DB::table('usersFavoriteLists')->insert($param);
+        }
+
+        $userInfo = DB::table('users')->where('id', $user->id)->first();
+        $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
+        $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
+        $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getCapsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'caps')->first();
+        $getSocksSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->first();
+        $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+        $getCapsImg = DB::table('caps_tables')->where('id', $userInfo->favCaps)->first();
+        $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
+
+
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
     }
 
     public function showList(){
