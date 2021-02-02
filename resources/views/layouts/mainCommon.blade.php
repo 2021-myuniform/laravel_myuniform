@@ -63,7 +63,7 @@
                     <input type="text" name="closeText" id="closeText">
                 </dd>
                 <div>
-                    <input type="submit" value="お気に入り登録" onclick="submitImg()">
+                    <input type="submit" value="マイコーデ登録" onclick="submitImg()">
                 </div>
             </dl>
         </form>
