@@ -78,7 +78,7 @@
     @yield('mainJs')
 
     <script type="text/javascript">
-        html2canvas(document.querySelector("#showWearList"),{width: 170, height:450}).then(canvas => {
+        html2canvas(document.querySelector("#showWearList")).then(canvas => {
         // var imageData = canvas.toDataURL();
         // imgタグに画像として、canvasの内容を挿入
         // document.getElementById('canvas-image').setAttribute("src",canvas.toDataURL());
