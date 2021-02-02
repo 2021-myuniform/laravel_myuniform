@@ -2,6 +2,13 @@
 
 <div class="showPrice">
 
+    @if (isset($getCapsImg))
+    <div class="showPriceList">
+        <p class="showPriceList_item">キャップ : {{$getCapsImg->brand}}</p>
+        <p class="showPriceList_price">¥ {{number_format($getCapsImg->price)}}</p>
+    </div>
+    @endif
+
     @if (isset($getTopsImg))
         <div class="showPriceList">
             <p class="showPriceList_item">トップス : {{$getTopsImg->brand}}</p>
@@ -16,27 +23,19 @@
         </div>
     @endif
 
+    @if (isset($getSocksImg))
+    <div class="showPriceList">
+        <p class="showPriceList_item">ソックス : {{$getSocksImg->brand}}</p>
+        <p class="showPriceList_price">¥ {{number_format($getSocksImg->price)}}</p>
+    </div>
+    @endif
+
     @if (isset($getShoesImg))
         <div class="showPriceList">
             <p class="showPriceList_item">シューズ : {{$getShoesImg->brand}}</p>
             <p class="showPriceList_price">¥ {{number_format($getShoesImg->price)}}</p>
         </div>
     @endif
-
-    @if (isset($getCapsImg))
-        <div class="showPriceList">
-            <p class="showPriceList_item">キャップ : {{$getCapsImg->brand}}</p>
-            <p class="showPriceList_price">¥ {{number_format($getCapsImg->price)}}</p>
-        </div>
-    @endif
-
-    @if (isset($getSocksImg))
-        <div class="showPriceList">
-            <p class="showPriceList_item">ソックス : {{$getSocksImg->brand}}</p>
-            <p class="showPriceList_price">¥ {{number_format($getSocksImg->price)}}</p>
-        </div>
-    @endif
-
 
     @if (isset($getTopsImg->price) || isset($getPantsImg->price) || isset($getShoesImg->price) || isset($getCapsImg->price) || isset($getSocksImg->price))
         <div class="showPriceList">

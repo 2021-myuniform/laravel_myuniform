@@ -2,11 +2,11 @@
 
     <div class="headerList_container" id="headerList_container">
         <ul class="headerList_item">
+            <li class="headerList_select" id="headerList_caps">Caps</li>
             <li class="headerList_select" id="headerList_tops">Tops</li>
             <li class="headerList_select" id="headerList_pants">Pants</li>
-            <li class="headerList_select" id="headerList_shoes">Shoes</li>
-            <li class="headerList_select" id="headerList_caps">Caps</li>
             <li class="headerList_select" id="headerList_socks">Socks</li>
+            <li class="headerList_select" id="headerList_shoes">Shoes</li>
         </ul>
     </div>
 

@@ -1,7 +1,29 @@
 @section('selectWear')
 
 {{-- <div> --}}
+
+
     <div class="selectWearList">
+        @if (isset($getCapsSet))
+        <div class="selectWearList_container" id="selectWearList_caps">
+            <div class="selectWearList_caps selectWearList_list">
+                <a href="{{ route('selectCaps') }}">
+                <div class="selectWearList_contents">
+                Capsを選ぶ
+                <p>カラー:{{$getCapsSet->color}}</p>
+                <p>ブランド:{{$getCapsSet->brand}}</p>
+                {{-- <p>対象:{{$getCapsSet->gender}}</p> --}}
+                </div>
+                </a>
+            </div>
+            <div class="selectWearList_select">
+                <a href="{{ route('changeCaps') }}">
+                    <div class="selectWearList_selectItem">条件変更</div>
+                </a>
+            </div>
+        </div>
+        @endif
+        
         @if (isset($getTopsSet))
         <div class="selectWearList_container" id="selectWearList_tops">
             <div class="selectWearList_tops selectWearList_list">
@@ -42,6 +64,26 @@
         </div>
         @endif
 
+        @if (isset($getSocksSet))
+        <div class="selectWearList_container" id="selectWearList_socks">
+            <div class="selectWearList_socks selectWearList_list">
+                <a href="{{ route('selectSocks') }}">
+                <div class="selectWearList_contents">
+                Socksを選ぶ
+                <p>カラー:{{$getSocksSet->color}}</p>
+                <p>ブランド:{{$getSocksSet->brand}}</p>
+                {{-- <p>対象:{{$getSocksSet->gender}}</p> --}}
+                </div>
+                </a>
+            </div>
+            <div class="selectWearList_select">
+                <a href="{{ route('changeSocks') }}">
+                    <div class="selectWearList_selectItem">条件変更</div>
+                </a>
+            </div>
+        </div>
+        @endif
+
         @if (isset($getShoesSet))
         <div class="selectWearList_container" id="selectWearList_shoes">
             <div class="selectWearList_shoes selectWearList_list">
@@ -62,45 +104,6 @@
         </div>
         @endif
 
-        @if (isset($getCapsSet))
-        <div class="selectWearList_container" id="selectWearList_caps">
-            <div class="selectWearList_caps selectWearList_list">
-                <a href="{{ route('selectCaps') }}">
-                <div class="selectWearList_contents">
-                Capsを選ぶ
-                <p>カラー:{{$getCapsSet->color}}</p>
-                <p>ブランド:{{$getCapsSet->brand}}</p>
-                {{-- <p>対象:{{$getCapsSet->gender}}</p> --}}
-                </div>
-                </a>
-            </div>
-            <div class="selectWearList_select">
-                <a href="{{ route('changeCaps') }}">
-                    <div class="selectWearList_selectItem">条件変更</div>
-                </a>
-            </div>
-        </div>
-        @endif
-
-        @if (isset($getSocksSet))
-        <div class="selectWearList_container" id="selectWearList_socks">
-            <div class="selectWearList_socks selectWearList_list">
-                <a href="{{ route('selectSocks') }}">
-                <div class="selectWearList_contents">
-                Socksを選ぶ
-                <p>カラー:{{$getSocksSet->color}}</p>
-                <p>ブランド:{{$getSocksSet->brand}}</p>
-                {{-- <p>対象:{{$getSocksSet->gender}}</p> --}}
-                </div>
-                </a>
-            </div>
-            <div class="selectWearList_select">
-                <a href="{{ route('changeSocks') }}">
-                    <div class="selectWearList_selectItem">条件変更</div>
-                </a>
-            </div>
-        </div>
-        @endif
     </div>
 {{-- </div> --}}
 
