@@ -615,12 +615,14 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->get();
+        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+
+        $otherUserData = DB::table('usersFavoriteOutfits')->where('user_id','!=', $user->id)->orderBy('created_at', 'desc')->get();
 
         // $test = base64_decode($userData->outfitSetImg);
         // ddd($test);
 
-        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user]);
+        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user, 'otherUser' => $otherUserData]);
 
     }
 }

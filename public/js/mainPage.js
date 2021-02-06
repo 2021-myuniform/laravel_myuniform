@@ -1,3 +1,5 @@
+// ヘッダーリストの表示
+
 const SWL_tops = document.getElementById('selectWearList_tops');
 const SWL_pants = document.getElementById('selectWearList_pants');
 const SWL_shoes = document.getElementById('selectWearList_shoes');
