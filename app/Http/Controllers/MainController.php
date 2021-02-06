@@ -615,12 +615,29 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->get();
+        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+
+        $otherUserData = DB::table('usersFavoriteOutfits')->where('user_id','!=', $user->id)->orderBy('created_at', 'desc')->get();
 
         // $test = base64_decode($userData->outfitSetImg);
         // ddd($test);
 
-        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user]);
+        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user, 'otherUser' => $otherUserData]);
+
+    }
+
+    public function showDetail(Request $request)
+    {
+        $user = Auth::user();
+        $userData = DB::table('usersFavoriteOutfits')->where('id', $request->id)->first();
+
+        $getPantsImg = DB::table('pants_tables')->where('id', $userData->favPants)->first();
+        $getTopsImg = DB::table('tops_tables')->where('id', $userData->favTops)->first();
+        $getShoesImg = DB::table('shoes_tables')->where('id', $userData->favShoes)->first();
+        $getCapsImg = DB::table('caps_tables')->where('id', $userData->favCaps)->first();
+        $getSocksImg = DB::table('socks_tables')->where('id', $userData->favSocks)->first();
+
+        return view('favOutfits.myFavDetail', ['userInfo' => $userData, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
 
     }
 }

@@ -32,13 +32,16 @@
         @yield('showPrice')
 
     </div>
-    <div>
+    <details>
+        <summary>お気に入り登録する</summary>
         <form id="favForm" action="{{ route('saveFav') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="favTops" value="{{$userInfo->favTops}}">
             <input type="hidden" name="favPants" value="{{$userInfo->favPants}}">
             <input type="hidden" name="favShoes" value="{{$userInfo->favShoes}}">
+            <input type="hidden" name="favCaps" value="{{$userInfo->favCaps}}">
+            <input type="hidden" name="favSocks" value="{{$userInfo->favSocks}}">
 
             <dl class="inputArea">
                 <input type="hidden" id="canvas-test" name="canvasTest" value="">
@@ -47,26 +50,26 @@
                     コーディネートのタイトル
                 </dt>
                 <dd>
-                    <input type="text" name="title" id="title">
+                    <input type="text" name="title" id="title" placeholder="任意入力">
                 </dd>
                 <dt>
                     コーディネートの説明
                 </dt>
                 <dd>
-                    <input type="text" name="openText" id="openText">
+                    <input type="text" name="openText" id="openText" placeholder="任意入力">
                 </dd>
                 <dt>
                     個人用メモ
                 </dt>
                 <dd>
-                    <input type="text" name="closeText" id="closeText">
+                    <input type="text" name="closeText" id="closeText" placeholder="任意入力">
                 </dd>
                 <div>
                     <input type="submit" value="マイコーデ登録" onclick="submitImg()">
                 </div>
             </dl>
         </form>
-    </div>
+    </details>
 
             {{-- <img src="" alt="" id="canvas-image" name="canvasImg" value=""> --}}
 

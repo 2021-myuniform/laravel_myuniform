@@ -48,12 +48,16 @@ class AuthenticatedSessionController extends Controller
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
         $getShoesSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'shoes')->first();
+        $getCapsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'caps')->first();
+        $getSocksSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->first();
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
+        $getCapsImg = DB::table('caps_tables')->where('id', $userInfo->favCaps)->first();
+        $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg]);
+        return view('mainPage.main', ['userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg,  'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
 
     }
 

@@ -83,6 +83,8 @@ Route::post('saveFav', 'App\Http\Controllers\MainController@saveFav')->name('sav
 
 Route::get('showMyList', 'App\Http\Controllers\MainController@showMyFavList')->name('showMyFavList')->middleware(['auth']);
 
+Route::get('detail', 'App\Http\Controllers\MainController@showDetail')->name('showDetail')->middleware(['auth']);
+
 // ジャンルごとの条件検索
 
 Route::get('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsFind')->name('changeTops')->middleware(['auth']);
