@@ -124,6 +124,7 @@ footer{
     display: flex;
     max-width: 1200px;
     margin: auto;
+    justify-content: center;
 }
 
 .selectWearList_contents{
@@ -320,6 +321,13 @@ footer{
 
 .inputArea dd{
     padding: 6px;
+}
+
+summary{
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: 10px;
 }
 
 /* モーダル */

@@ -7,13 +7,13 @@
     <div class="tab-content">
     @foreach ($userData as $item)
 
-    <div class="favListBox">
+    <a href="{{ asset('/detail?id=' . $item->id) }}" class="favListBox">
         <div>
             <img class="favListImg" src="{{$item->outfitSetImg}}" alt="image">
         </div>
         <p>{{$item->created_at}}</p>
         <h3>タイトル : {{$item->title}}</h3>
-    </div>
+    </a>
 
     @endforeach
     </div>
