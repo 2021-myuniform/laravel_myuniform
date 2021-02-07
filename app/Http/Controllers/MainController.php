@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\usersFavoriteList;
+use App\Models\detailComment;
 use App\Models\User;
 
 use function PHPUnit\Framework\isEmpty;
@@ -619,10 +620,13 @@ class MainController extends Controller
 
         $otherUserData = DB::table('usersFavoriteOutfits')->where('user_id','!=', $user->id)->orderBy('created_at', 'desc')->get();
 
+        $allUsers = DB::table('users')->get();
+        // ユーザーのアイテム取得
+
         // $test = base64_decode($userData->outfitSetImg);
         // ddd($test);
 
-        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user, 'otherUser' => $otherUserData]);
+        return view('favOutfits.myFavMain', ['userData' => $userData, 'user' => $user, 'otherUser' => $otherUserData, 'allUsers' => $allUsers]);
 
     }
 
@@ -645,8 +649,14 @@ class MainController extends Controller
     public function showUserDetail(Request $request)
     {
         $user = Auth::user();
+        // ユーザーの取得
+        $allUsers = DB::table('users')->get();
+        // ユーザーのアイテム取得
         $userData = DB::table('usersFavoriteOutfits')->where('id', $request->id)->first();
+        // ユーザーの情報取得
         $userID = DB::table('users')->where('id', $userData->user_id)->first();
+        // コメントの取得
+        $comments = detailComment::where("detail_id", $request->id)->get();
 
         $getPantsImg = DB::table('pants_tables')->where('id', $userData->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userData->favTops)->first();
@@ -654,7 +664,7 @@ class MainController extends Controller
         $getCapsImg = DB::table('caps_tables')->where('id', $userData->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userData->favSocks)->first();
 
-        return view('favOutfits.userFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('favOutfits.userFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'comments' => $comments, 'allUsers' => $allUsers]);
 
     }
 }

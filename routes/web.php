@@ -130,3 +130,10 @@ Route::get('/formOpen',
 Route::post('/uploadOpen',
 	[App\Http\Controllers\UploadImageController::class, "uploadOpen"]
 	)->name("upload_imageOpen")->middleware(['auth']);
+
+// コメントアップロード
+
+Route::post('/uploadComment',
+	[App\Http\Controllers\CommentController::class, "uploadComment"]
+	)->name("uploadComment")->middleware(['auth']);
+

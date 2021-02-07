@@ -29,7 +29,11 @@
             </div>
             <p>{{$item->created_at}}</p>
             <h3>タイトル : {{$item->title}}</h3>
-            <p>投稿者 : {{$user->name}}</p>
+            @foreach ($allUsers as $allUser)
+            @if ($item->user_id == $allUser->id)
+            <p>投稿者 : {{$allUser->name}}</p>
+            @endif
+            @endforeach
         </a>
 
         @endforeach
