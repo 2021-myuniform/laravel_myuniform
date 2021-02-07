@@ -123,4 +123,13 @@
     .favListImg{
         width: 100%;
     }
+
+    .commentBox{
+        display: initial;
+    }
+
+    .commentBoxText{
+        margin-left: 0;
+        padding: 5px 0;
+    }
 }
