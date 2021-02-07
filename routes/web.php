@@ -85,6 +85,8 @@ Route::get('showMyList', 'App\Http\Controllers\MainController@showMyFavList')->n
 
 Route::get('detail', 'App\Http\Controllers\MainController@showDetail')->name('showDetail')->middleware(['auth']);
 
+Route::get('userDetail', 'App\Http\Controllers\MainController@showUserDetail')->name('showUserDetail')->middleware(['auth']);
+
 // ジャンルごとの条件検索
 
 Route::get('searchTops/changeFind', 'App\Http\Controllers\MainController@changeTopsFind')->name('changeTops')->middleware(['auth']);
@@ -128,3 +130,10 @@ Route::get('/formOpen',
 Route::post('/uploadOpen',
 	[App\Http\Controllers\UploadImageController::class, "uploadOpen"]
 	)->name("upload_imageOpen")->middleware(['auth']);
+
+// コメントアップロード
+
+Route::post('/uploadComment',
+	[App\Http\Controllers\CommentController::class, "uploadComment"]
+	)->name("uploadComment")->middleware(['auth']);
+

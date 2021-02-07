@@ -29,10 +29,10 @@
 
     <div>
         <div>
-            @if (!isset($userInfo->userImgPath))
+            @if (!isset($userID->userImgPath))
             <div class="faceNoImg"></div>
             @else
-            <img class="userFaceImg" class="userImg" src="{{ asset(Storage::url($userInfo->userImgPath)) }}" alt="">
+            <img class="userFaceImg" class="userImg" src="{{ asset(Storage::url($userID->userImgPath)) }}" alt="">
             @endif
         </div>
     </div>
