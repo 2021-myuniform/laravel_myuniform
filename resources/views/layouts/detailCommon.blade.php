@@ -30,6 +30,8 @@
 
         @yield('showPrice')
 
+        @yield('showComment')
+
     </div>
 
     @yield('description')
