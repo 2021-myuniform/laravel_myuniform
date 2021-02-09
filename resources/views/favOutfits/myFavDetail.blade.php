@@ -16,7 +16,9 @@
 
     @include('layouts.showPrice')
 
-    @include('favOutfits.description')
+    @include('favOutfits.userFavComment')
+
+    @include('favOutfits.myDescription')
 </div>
 
 

@@ -635,6 +635,10 @@ class MainController extends Controller
         $user = Auth::user();
         $userData = DB::table('usersFavoriteOutfits')->where('id', $request->id)->first();
         $userID = DB::table('users')->where('id', $userData->user_id)->first();
+        // ユーザーの取得
+        $allUsers = DB::table('users')->get();
+        // コメントの取得
+        $comments = detailComment::where("detail_id", $request->id)->get();
 
         $getPantsImg = DB::table('pants_tables')->where('id', $userData->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userData->favTops)->first();
@@ -642,7 +646,7 @@ class MainController extends Controller
         $getCapsImg = DB::table('caps_tables')->where('id', $userData->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userData->favSocks)->first();
 
-        return view('favOutfits.myFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('favOutfits.myFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'comments' => $comments, 'allUsers' => $allUsers]);
 
     }
 
