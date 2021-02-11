@@ -137,3 +137,9 @@ Route::post('/uploadComment',
 	[App\Http\Controllers\CommentController::class, "uploadComment"]
 	)->name("uploadComment")->middleware(['auth']);
 
+// いいね機能
+Route::post('/userDetail/{id}/likes', 'App\Http\Controllers\LikesController@store')->name('LikesController@store')->middleware(['auth']);;
+
+Route::post('/userDetail/{id}/likes/{like}', 'App\Http\Controllers\LikesController@destroy')->name('LikesController@destroy')->middleware(['auth']);
+
+Route::get('/userDetail/createLike', 'App\Http\Controllers\PostsController@show')->name('createLike')->middleware(['auth']);

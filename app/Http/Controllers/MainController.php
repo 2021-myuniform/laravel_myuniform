@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\usersFavoriteList;
+use App\Models\usersFavoriteOutfit;
 use App\Models\detailComment;
+use App\Models\Like;
 use App\Models\User;
 
 use function PHPUnit\Framework\isEmpty;
@@ -607,7 +608,7 @@ class MainController extends Controller
             'openText' => $request->openText,
             'closeText' => $request->closeText,
         ];
-        DB::table('usersFavoriteOutfits')->insert($param);
+        DB::table('users_favorite_outfits')->insert($param);
 
         return view('mainPage.saveFav');
     }
@@ -616,9 +617,9 @@ class MainController extends Controller
     {
         $user = Auth::user();
 
-        $userData = DB::table('usersFavoriteOutfits')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        $userData = DB::table('users_favorite_outfits')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
-        $otherUserData = DB::table('usersFavoriteOutfits')->where('user_id','!=', $user->id)->orderBy('created_at', 'desc')->get();
+        $otherUserData = DB::table('users_favorite_outfits')->where('user_id','!=', $user->id)->orderBy('created_at', 'desc')->get();
 
         $allUsers = DB::table('users')->get();
         // ユーザーのアイテム取得
@@ -633,7 +634,7 @@ class MainController extends Controller
     public function showDetail(Request $request)
     {
         $user = Auth::user();
-        $userData = DB::table('usersFavoriteOutfits')->where('id', $request->id)->first();
+        $userData = DB::table('users_favorite_outfits')->where('id', $request->id)->first();
         $userID = DB::table('users')->where('id', $userData->user_id)->first();
         // ユーザーの取得
         $allUsers = DB::table('users')->get();
@@ -652,15 +653,24 @@ class MainController extends Controller
 
     public function showUserDetail(Request $request)
     {
+
         $user = Auth::user();
         // ユーザーの取得
         $allUsers = DB::table('users')->get();
         // ユーザーのアイテム取得
-        $userData = DB::table('usersFavoriteOutfits')->where('id', $request->id)->first();
+        $userData = DB::table('users_favorite_outfits')->where('id', $request->id)->first();
         // ユーザーの情報取得
         $userID = DB::table('users')->where('id', $userData->user_id)->first();
         // コメントの取得
         $comments = detailComment::where("detail_id", $request->id)->get();
+
+        // いいねの取得
+        $post = usersFavoriteOutfit::findOrFail($request->id);
+        // findOrFail 見つからなかった時の例外処理
+
+        $like = Like::where('post_id', $request->id)->where('user_id', Auth::user()->id)->first();
+        // $like = $post->likes()->where('user_id', Auth::user()->id)->first();
+        // ddd($like);
 
         $getPantsImg = DB::table('pants_tables')->where('id', $userData->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userData->favTops)->first();
@@ -668,7 +678,7 @@ class MainController extends Controller
         $getCapsImg = DB::table('caps_tables')->where('id', $userData->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userData->favSocks)->first();
 
-        return view('favOutfits.userFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'comments' => $comments, 'allUsers' => $allUsers]);
+        return view('favOutfits.userFavDetail', ['userInfo' => $userData,'userID' => $userID, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'comments' => $comments, 'allUsers' => $allUsers, 'like' => $like, 'post' => $post]);
 
     }
 }
