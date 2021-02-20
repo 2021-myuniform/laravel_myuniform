@@ -11,12 +11,12 @@
         </div>
         <div class="title1Text">
             <h2 class="title1TextH2">スポーツの時間をもっとオシャレに、もっとワクワク。</h2>
-            <p>MyUniformは、気になるスポーツウェアを自由にコーディネートして</p>
+            <p>Wearcoordは、気になるスポーツウェアを自由にコーディネートして</p>
             <p>着てみたいブランドのウェアやカラーを購入前に確認できるアプリです。</p>
         </div>
 
         <div class="title2Img">
-            <h2 class="title2Text">SEECSでできること</h2>
+            <h2 class="title2Text">Wearcoordでできること</h2>
 
                 <ul class="ableListContainer">
                     <li class="ableListBox">
@@ -56,7 +56,7 @@
     </section>
 
     <section class="bigSection">
-        <h2 class="h2Title">Seecsのつかい方</h2>
+        <h2 class="h2Title">Wearcoordのつかい方</h2>
         <div class="movieSize">
             <div class="movieContainer">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/TRh-amAhOEw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
