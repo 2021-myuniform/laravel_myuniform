@@ -8,7 +8,7 @@
         <li class="footerListItem"><a href="">お問い合わせ</a></li>
     </ul>
     <div class="footerTextBox">
-        <small class="footerText">sample Inc</small>
+        <small class="footerText">Wearcoord Inc</small>
     </div>
 </footer>
 
