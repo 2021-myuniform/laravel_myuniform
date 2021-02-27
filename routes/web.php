@@ -143,3 +143,6 @@ Route::post('/userDetail/{id}/likes', 'App\Http\Controllers\LikesController@stor
 Route::post('/userDetail/{id}/likes/{like}', 'App\Http\Controllers\LikesController@destroy')->name('LikesController@destroy')->middleware(['auth']);
 
 Route::get('/userDetail/createLike', 'App\Http\Controllers\PostsController@show')->name('createLike')->middleware(['auth']);
+
+// 楽天API
+Route::get('/search', 'App\Http\Controllers\SearchRakutenController@view');
