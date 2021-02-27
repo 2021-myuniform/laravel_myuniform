@@ -27,12 +27,36 @@
                 <option value="1008297">ゴーセン</option>
                 <option value="1000601">ミズノ</option>
                 <option value="1002656">ヨネックス</option>
+                <option value="1000588">ナイキ</option>
+                <option value="1000595">アディダス</option>
+                <option value="1000860">アシックス</option>
+                <option value="1002148">ディアドラ</option>
+                <option value="1008404">バボラ</option>
+                <option value="1004267">プリンス</option>
+                <option value="1000965">フィラ</option>
+                <option value="1001753">エレッセ</option>
+                <option value="1001782">オークリー</option>
+                <option value="1000865">ルコック</option>
+                <option value="1000808">ラコステ</option>
+                <option value="1000597">ニューバランス</option>
+                <option value="1001642">アンダーアーマー</option>
+                <option value="1004239">スリクソン</option>
+                <option value="1008507">Lotto</option>
+                <option value="1005489">エンポリオ・アルマーニ</option>
         </select>
         <select name="color" id="">
                 <option value="">色を選択</option>
                 <option value="1004015">ネイビー</option>
                 <option value="1000886">ブラック</option>
                 <option value="1000873">ホワイト</option>
+                <option value="1000883">ブラウン</option>
+                <option value="1000876">ピンク</option>
+                <option value="1000877">レッド</option>
+                <option value="1000875">オレンジ</option>
+                <option value="1000874">イエロー</option>
+                <option value="1000884">グリーン</option>
+                <option value="1000885">ブルー</option>
+                <option value="1000882">パープル</option>
         </select>
         <input type="submit" value="送信">
     </form>
