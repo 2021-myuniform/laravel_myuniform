@@ -49,7 +49,7 @@
                 <option value="1004015">ネイビー</option>
                 <option value="1000886">ブラック</option>
                 <option value="1000873">ホワイト</option>
-                <option value="1000883">ブラウン</option>
+                {{-- <option value="1000883">ブラウン</option> --}}
                 <option value="1000876">ピンク</option>
                 <option value="1000877">レッド</option>
                 <option value="1000875">オレンジ</option>
@@ -67,7 +67,7 @@
     <div style="padding: 30px;">
         <p>{{$item['itemName']}}</p>
         <p>¥ {{$item['itemPrice']}}</p>
-        {{-- <p>{{json_encode($item['all'])}}</p> --}}
+        <p>{{json_encode($item['all'])}}</p>
         <p>{{$item['genre']}}</p>
         {{-- <p>{{$item['tag']}}</p> --}}
         <a href="{{$item['itemUrl']}}">{{$item['itemUrl']}}</a>

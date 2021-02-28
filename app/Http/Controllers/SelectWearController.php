@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Library\SearchItemPack;
+
 
 class SelectWearController extends Controller
 {
@@ -23,6 +25,20 @@ class SelectWearController extends Controller
         $pantsItemColor = $pantsItems->color;
         $pantsItemsOutput = DB::table('pants_tables')->where('gender', $pantsItemGender)->where('category', $pantsItemCategory)->where('color', $pantsItemColor)->where('brand', $pantsItemBrand)->get();
 
+        $rakutenColorTag = SearchItemPack::encodeRakutenColorTag($pantsItems->color);
+        $rakutenBrandTag = SearchItemPack::encodeRakutenBrandTag($pantsItems->brand);
+
+        if($user->gender == 'male'){
+            // 男性用パンツ
+            $rakutenGenre = 508772;
+        }else{
+            // 女性用パンツ
+            $rakutenGenre = 508820;
+        }
+
+        $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
+        // ddd($rakutenList);
+
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
@@ -36,7 +52,7 @@ class SelectWearController extends Controller
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.searchPants', ['pantsItemsOutputs' => $pantsItemsOutput,'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('mainPage.searchPants', ['pantsItemsOutputs' => $pantsItemsOutput,'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'rakutenLists' => $rakutenList]);
     }
 
     public function sendPants(Request $request)
