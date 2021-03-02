@@ -45,7 +45,6 @@ class SelectWearController extends Controller
         }
 
         $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
-        // ddd($rakutenList);
 
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
@@ -221,6 +220,21 @@ class SelectWearController extends Controller
         $shoesItemColor = $shoesItems->color;
         $shoesItemsOutput = DB::table('shoes_tables')->where('gender', $shoesItemGender)->where('category', $shoesItemCategory)->where('color', $shoesItemColor)->where('brand', $shoesItemBrand)->get();
 
+        $rakutenColorTag = SearchItemPack::encodeRakutenColorTag($shoesItems->color);
+        $rakutenBrandTag = SearchItemPack::encodeRakutenBrandTag($shoesItems->brand);
+
+        if ($user->gender == 'male') {
+            // 男性用シューズ
+            $rakutenGenre = 208025;
+
+        } else {
+            // 女性用シューズ
+            $rakutenGenre = 565819;
+
+        }
+
+        $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
+
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
@@ -234,7 +248,7 @@ class SelectWearController extends Controller
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.searchShoes', ['shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('mainPage.searchShoes', ['shoesItemsOutputs' => $shoesItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg,  'rakutenLists' => $rakutenList]);
     }
 
     public function sendShoes(Request $request)
@@ -279,6 +293,21 @@ class SelectWearController extends Controller
         $capsItemColor = $capsItems->color;
         $capsItemsOutput = DB::table('caps_tables')->where('gender', $capsItemGender)->where('color', $capsItemColor)->where('brand', $capsItemBrand)->get();
 
+        $rakutenColorTag = SearchItemPack::encodeRakutenColorTag($capsItems->color);
+        $rakutenBrandTag = SearchItemPack::encodeRakutenBrandTag($capsItems->brand);
+
+        if ($user->gender == 'male') {
+            // 男性用キャップス
+            $rakutenGenre = 506269;
+
+        } else {
+            // 女性用キャップス
+            $rakutenGenre = 565818;
+
+        }
+
+        $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
+
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
@@ -292,7 +321,7 @@ class SelectWearController extends Controller
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.searchCaps', ['capsItemsOutputs' => $capsItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('mainPage.searchCaps', ['capsItemsOutputs' => $capsItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg,  'rakutenLists' => $rakutenList]);
     }
 
     public function sendCaps(Request $request)
@@ -338,6 +367,21 @@ class SelectWearController extends Controller
         $socksItemCategory = $socksItems->category;
         $socksItemsOutput = DB::table('socks_tables')->where('gender', $socksItemGender)->where('color', $socksItemColor)->where('category', $socksItemCategory)->where('brand', $socksItemBrand)->get();
 
+        $rakutenColorTag = SearchItemPack::encodeRakutenColorTag($socksItems->color);
+        $rakutenBrandTag = SearchItemPack::encodeRakutenBrandTag($socksItems->brand);
+
+        if ($user->gender == 'male') {
+            // 男性用ソックス
+            $rakutenGenre = 508802;
+
+        } else {
+            // 女性用ソックス
+            $rakutenGenre = 508853;
+
+        }
+
+        $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
+
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
@@ -351,7 +395,7 @@ class SelectWearController extends Controller
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.searchSocks', ['socksItemsOutputs' => $socksItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+        return view('mainPage.searchSocks', ['socksItemsOutputs' => $socksItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg,  'rakutenLists' => $rakutenList]);
     }
 
     public function sendSocks(Request $request)

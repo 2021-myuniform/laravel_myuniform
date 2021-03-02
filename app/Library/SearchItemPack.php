@@ -46,7 +46,9 @@ class SearchItemPack
                 //配列で結果をぶち込んで行きます
                 foreach ($response as $item) {
                     //画像サイズを変えたかったのでURLを整形します
-                    $str = str_replace("_ex=128x128", "_ex=175x175", $item['mediumImageUrls'][0]['imageUrl']);
+                    // $str = str_replace("_ex=128x128", "_ex=175x175", $item['mediumImageUrls'][0]['imageUrl']);
+                    $str = $item['mediumImageUrls'][0]['imageUrl'];
+
                     $items[] = array(
                         'itemName' => $item['itemName'],
                         'itemPrice' => $item['itemPrice'],
