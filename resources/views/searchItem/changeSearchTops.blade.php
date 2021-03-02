@@ -212,20 +212,38 @@
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
-                    <input class="categorySelectInputNone" type="radio" name="category" value="long" id="longCategory">
-                    <label for="longCategory">
+                    <input class="categorySelectInputNone" type="radio" name="category" value="setup" id="setupCategory">
+                    <label for="setupCategory">
                         <img class="categoryItem" src="{{ asset('img/other/long-shirt.png') }}" alt="">
                         <div class="categoryText">
-                            長袖
+                            セットアップ
                         </div>
                     </label>
                 </li>
                 <li class="categorySelectList">
-                    <input class="categorySelectInputNone" type="radio" name="category" value="half" id="halfCategory">
-                    <label for="halfCategory">
+                    <input class="categorySelectInputNone" type="radio" name="category" value="outer" id="outerCategory">
+                    <label for="outerCategory">
+                        <img class="categoryItem" src="{{ asset('img/other/long-shirt.png') }}" alt="">
+                        <div class="categoryText">
+                            アウター
+                        </div>
+                    </label>
+                </li>
+                <li class="categorySelectList">
+                    <input class="categorySelectInputNone" type="radio" name="category" value="tshirt" id="tshirtCategory">
+                    <label for="tshirtCategory">
                         <img class="categoryItem" src="{{ asset('img/other/t-shirt-logo.png') }}" alt="">
                         <div class="categoryText">
-                            半袖
+                            Tシャツ
+                        </div>
+                    </label>
+                </li>
+                <li class="categorySelectList">
+                    <input class="categorySelectInputNone" type="radio" name="category" value="polo" id="poloCategory">
+                    <label for="poloCategory">
+                        <img class="categoryItem" src="{{ asset('img/other/t-shirt-logo.png') }}" alt="">
+                        <div class="categoryText">
+                            ポロシャツ
                         </div>
                     </label>
                 </li>
