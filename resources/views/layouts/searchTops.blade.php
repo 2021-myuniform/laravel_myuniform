@@ -154,23 +154,6 @@
             <p>お探しのウェアのタイプをお選びください。</p>
         </div>
 
-        {{-- <div>
-            <ul class="categorySelect">
-                <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="long" id="longCategory">
-                    <div class="categoryText">
-                        長袖
-                    </div>
-                </li>
-                <li class="categorySelectList">
-                    <input class="categorySelectInput" type="radio" name="category" value="half" id="halfCategory">
-                    <div class="categoryText">
-                        半袖
-                    </div>
-                </li>
-            </ul>
-        </div> --}}
-
         <div>
             <ul class="categorySelect">
                 <li class="categorySelectList">
