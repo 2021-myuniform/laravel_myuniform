@@ -7,7 +7,7 @@
     <div class="searchListText">
         <p>Socks : <span class="textRed">【COLOR】</span> {{$getSocksSet->color}} <span class="textRed">【BRAND】</span>{{$getSocksSet->brand}} <span class="textRed">【CATEGORY】</span>{{$getSocksSet->category}}</p>
     </div>
-    @if ($socksItemsOutputs->isEmpty() && empty($rakutenLists))
+    @if ($socksItemsOutputs->isEmpty() && empty($rakutenLists['items']))
         <div class="searchListText">
             <p>条件にあったアイテムはありませんでした。</p>
         </div>

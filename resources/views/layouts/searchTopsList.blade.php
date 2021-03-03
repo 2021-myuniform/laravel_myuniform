@@ -9,7 +9,7 @@
         {{-- <p>Topsの条件に一致したアイテム</p> --}}
         <p>Tops : <span class="textRed">【COLOR】</span> {{$getTopsSet->color}} <span class="textRed">【BRAND】</span>{{$getTopsSet->brand}} <span class="textRed">【CATEGORY】</span>{{$getTopsSet->category}}</p>
     </div>
-    @if ($topsItemsOutputs->isEmpty() && empty($rakutenLists))
+    @if ($topsItemsOutputs->isEmpty() && empty($rakutenLists['items']))
     <div class="searchListText">
         <p>条件にあったアイテムはありませんでした。</p>
     </div>

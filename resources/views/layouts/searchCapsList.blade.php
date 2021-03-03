@@ -8,7 +8,7 @@
         {{-- <p>Shoesの条件に一致したアイテム</p> --}}
         <p>Caps : <span class="textRed">【COLOR】</span> {{$getCapsSet->color}} <span class="textRed">【BRAND】</span>{{$getCapsSet->brand}}</p>
     </div>
-    @if ($capsItemsOutputs->isEmpty() && empty($rakutenLists))
+    @if ($capsItemsOutputs->isEmpty() && empty($rakutenLists['items']))
         <div class="searchListText">
             <p>条件にあったアイテムはありませんでした。</p>
         </div>
