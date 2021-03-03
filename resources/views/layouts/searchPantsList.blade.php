@@ -11,7 +11,7 @@
         {{-- <p>Pantsの条件に一致したアイテム</p> --}}
         <p>Pants : <span class="textRed">【COLOR】</span> {{$getPantsSet->color}} <span class="textRed">【BRAND】</span>{{$getPantsSet->brand}} <span class="textRed">【CATEGORY】</span>{{$getPantsSet->category}}</p>
     </div>
-    @if ($pantsItemsOutputs->isEmpty() && empty($rakutenLists))
+    @if ($pantsItemsOutputs->isEmpty() && empty($rakutenLists['items']))
     <div class="searchListText">
         <p>条件にあったアイテムはありませんでした。</p>
     </div>
