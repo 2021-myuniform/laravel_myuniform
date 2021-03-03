@@ -8,6 +8,7 @@ composer update
 ## .envの修正
 ```
 DBの修正
+楽天APIの追加
 ```
 
 ## composer dump-autoloadの実行
