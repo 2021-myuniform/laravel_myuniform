@@ -41,6 +41,7 @@
                     @csrf
                     <li>
                        <input type="hidden" name="capsItemsOutputId" value="{{$rakutenListItem["itemCode"]}}">
+                       <input type="hidden" value="{{$rakutenListItem["itemUrl"]}}">
                        <img class="searchItemShow" src="{{ asset($rakutenListItem["mediumImageUrls"]) }}" alt="{{$rakutenListItem["mediumImageUrls"]}}">
                        <p class="searchItemName">{{$rakutenListItem["itemName"]}}</p>
                        <p class="searchItemPrice">¥ {{number_format($rakutenListItem["itemPrice"])}}</p>
