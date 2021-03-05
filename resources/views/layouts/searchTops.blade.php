@@ -44,14 +44,14 @@
                     <input class="colorSelectInput" type="radio" name="color" value="blue" id="colorBlue">
                     <label for="colorBlue"><div class="blueBox colorBox"></div></label>
                 </li>
-                <li class="colorSelectList">
+                {{-- <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="skyblue" id="colorSkyblue">
                     <label for="colorSkyblue"><div class="skyblueBox colorBox"></div></label>
                 </li>
                 <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="lightgreen" id="colorLightgreen">
                     <label for="colorLightgreen"><div class="lightgreenBox colorBox"></div></label>
-                </li>
+                </li> --}}
                 <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="green" id="colorGreen">
                     <label for="colorGreen"><div class="greenBox colorBox"></div></label>
@@ -76,10 +76,10 @@
                     <input class="colorSelectInput" type="radio" name="color" value="purple" id="colorPurple">
                     <label for="colorPurple"><div class="purpleBox colorBox"></div></label>
                 </li>
-                <li class="colorSelectList">
+                {{-- <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="gray" id="colorGray">
                     <label for="colorGray"><div class="grayBox colorBox"></div></label>
-                </li>
+                </li> --}}
                 <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="white" id="colorWhite">
                     <label for="colorWhite"><div class="whiteBox colorBox"></div></label>

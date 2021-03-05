@@ -86,10 +86,10 @@
                     <input class="colorSelectInput" type="radio" name="color" value="purple" id="colorPurple">
                     <label for="colorPurple"><div class="purpleBox colorBox"></div></label>
                 </li>
-                <li class="colorSelectList">
+                {{-- <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="gray" id="colorGray">
                     <label for="colorGray"><div class="grayBox colorBox"></div></label>
-                </li>
+                </li> --}}
                 <li class="colorSelectList">
                     <input class="colorSelectInput" type="radio" name="color" value="white" id="colorWhite">
                     <label for="colorWhite"><div class="whiteBox colorBox"></div></label>
