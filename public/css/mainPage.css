@@ -147,12 +147,12 @@ footer{
 }
 
 .userSelectImgTops{
-    width: 150px;
+    width: 155px;
 }
 
 .userSelectImgPants{
-    width: 100px;
-    height: 120px;
+    width: 180px;
+    /* height: 120px; */
 }
 
 .userSelectImgShoes{
@@ -187,7 +187,7 @@ footer{
 .showWearList{
     min-width: 400px;
     text-align: center;
-    background-image: url('../img/other/manekin_background.jpg');
+    background-image: url('../img/other/manekin_done3.png');
     object-fit: cover;
     background-size: contain;
     background-repeat: no-repeat;
@@ -298,6 +298,18 @@ footer{
 .textRed{
     color: firebrick;
     font-weight: bold;
+}
+
+.mainTopsStyle{
+    width: 100%;
+    height: 130px;
+    z-index: 100;
+}
+
+.mainPantsStyle{
+    width: 100%;
+    height: 150px;
+    z-index: 1;
 }
 
 /* インプットエリア */

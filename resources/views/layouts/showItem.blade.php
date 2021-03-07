@@ -37,7 +37,7 @@
     </div>
 
     <a href="#topsShowItem" class="ShowItem" rel="modal:open">
-        <div>
+        <div class="mainTopsStyle">
             @if (isset($userInfo))
             <p style="display: none">ユーザーのお気に入りTops</p>
             <p style="display: none">{{$userInfo->favTops}}</p>
@@ -62,29 +62,31 @@
     </a>
 
     <a href="#pantsShowItem" class="ShowItem" rel="modal:open">
-        @if (isset($userInfo))
-        <p style="display: none">ユーザーのお気に入りPants</p>
-        <p style="display: none">{{$userInfo->favPants}}</p>
-        @if (isset($getPantsImg))
-        <img class="userSelectImgPants" src="{{ asset('img/img_pants/' . $getPantsImg->img) }}" alt="{{$getPantsImg->img}}">
-        @endif
-        @endif
+        <div class="mainPantsStyle">
+            @if (isset($userInfo))
+            <p style="display: none">ユーザーのお気に入りPants</p>
+            <p style="display: none">{{$userInfo->favPants}}</p>
+            @if (isset($getPantsImg))
+            <img class="userSelectImgPants" src="{{ asset('img/img_pants/' . $getPantsImg->img) }}" alt="{{$getPantsImg->img}}">
+            @endif
+            @endif
 
-        <!-- Modal HTML embedded directly into document -->
-        @if (isset($getPantsImg->jancode))
-        <div id="pantsShowItem" class="modal showItemModal">
-         <p class="modalBtnText">Pants : </p>
-         <p class="modalBtnText">商品名 : {{$getPantsImg->jancode}}</p>
-         <p class="modalBtnText">購入ページに飛びますか？</p>
-         <div class="modalBtn">
-            <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
-            <a class="modalBtnSet" href="{{$getPantsImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
-         </div>
+            <!-- Modal HTML embedded directly into document -->
+            @if (isset($getPantsImg->jancode))
+            <div id="pantsShowItem" class="modal showItemModal">
+             <p class="modalBtnText">Pants : </p>
+             <p class="modalBtnText">商品名 : {{$getPantsImg->jancode}}</p>
+             <p class="modalBtnText">購入ページに飛びますか？</p>
+             <div class="modalBtn">
+                <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
+                <a class="modalBtnSet" href="{{$getPantsImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
+             </div>
+            </div>
+            @endif
         </div>
-        @endif
     </a>
 
-    <a href="#pantsShowItem" class="ShowItem" rel="modal:open">
+    <a href="#socksShowItem" class="ShowItem" rel="modal:open">
         <div>
             @if (isset($userInfo))
             <p style="display: none">ユーザーのお気に入りSocks</p>
@@ -100,7 +102,7 @@
 
             <!-- Modal HTML embedded directly into document -->
             @if (isset($getSocksImg->jancode))
-            <div id="pantsShowItem" class="modal showItemModal">
+            <div id="socksShowItem" class="modal showItemModal">
              <p class="modalBtnText">Socks : </p>
              <p class="modalBtnText">商品名 : {{$getSocksImg->jancode}}</p>
              <p class="modalBtnText">購入ページに飛びますか？</p>
@@ -114,26 +116,28 @@
     </a>
 
     <a  href="#shoesShowItem" class="ShowItem showItemShoes" rel="modal:open">
-        @if (isset($userInfo))
-        <p style="display: none">ユーザーのお気に入りShoes</p>
-        <p style="display: none">{{$userInfo->favShoes}}</p>
-        @if (isset($getShoesImg))
-        <img class="userSelectImgShoes" src="{{ asset('img/img_shoes/' . $getShoesImg->img) }}" alt="{{$getShoesImg->img}}">
-        @endif
-        @endif
+        <div>
+            @if (isset($userInfo))
+            <p style="display: none">ユーザーのお気に入りShoes</p>
+            <p style="display: none">{{$userInfo->favShoes}}</p>
+            @if (isset($getShoesImg))
+            <img class="userSelectImgShoes" src="{{ asset('img/img_shoes/' . $getShoesImg->img) }}" alt="{{$getShoesImg->img}}">
+            @endif
+            @endif
 
-        <!-- Modal HTML embedded directly into document -->
-        @if (isset($getShoesImg->jancode))
-        <div id="shoesShowItem" class="modal showItemModal">
-         <p class="modalBtnText">Shoes : </p>
-         <p class="modalBtnText">商品名 : {{$getShoesImg->jancode}}</p>
-         <p class="modalBtnText">購入ページに飛びますか？</p>
-         <div class="modalBtn">
-            <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
-            <a class="modalBtnSet" href="{{$getShoesImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
-         </div>
+            <!-- Modal HTML embedded directly into document -->
+            @if (isset($getShoesImg->jancode))
+            <div id="shoesShowItem" class="modal showItemModal">
+             <p class="modalBtnText">Shoes : </p>
+             <p class="modalBtnText">商品名 : {{$getShoesImg->jancode}}</p>
+             <p class="modalBtnText">購入ページに飛びますか？</p>
+             <div class="modalBtn">
+                <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
+                <a class="modalBtnSet" href="{{$getShoesImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
+             </div>
+            </div>
+            @endif
         </div>
-        @endif
     </a>
     <div class="showWearList_foot">
         {{-- @if (isset($userInfo))
