@@ -156,6 +156,22 @@
                     <input class="brandSelectInput" type="radio" name="brand" value="Adidas" id="adidasBrand">
                     <label class="brandBox" for="adidasBrand">Adidas</label>
                 </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="asics" id="asicsBrand">
+                    <label class="brandBox" for="asicsBrand">Asics</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="diadra" id="diadraBrand">
+                    <label class="brandBox" for="diadraBrand">Diadra</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="prince" id="princeBrand">
+                    <label class="brandBox" for="princeBrand">Prince</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="fila" id="filaBrand">
+                    <label class="brandBox" for="filaBrand">FILA</label>
+                </li>
             </ul>
         </div>
 
