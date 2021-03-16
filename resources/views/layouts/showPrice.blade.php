@@ -9,7 +9,7 @@
     </div>
     @endif
 
-    @if (isset($getTopsImg))
+    @if (isset($getTopsImg->brand))
         <div class="showPriceList">
             <p class="showPriceList_item">トップス : {{$getTopsImg->brand}}</p>
             <p class="showPriceList_price">¥ {{number_format($getTopsImg->price)}}</p>
