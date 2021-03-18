@@ -9,6 +9,10 @@ composer update
 ```
 DBの修正
 楽天APIの追加
+KEYの生成
+```
+```
+php artisan key:generate
 ```
 
 ## composer dump-autoloadの実行
