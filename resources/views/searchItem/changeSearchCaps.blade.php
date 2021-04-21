@@ -139,6 +139,14 @@
                     <input class="brandSelectInput" type="radio" name="brand" value="underarmour" id="underarmourBrand">
                     <label class="brandBox" for="underarmourBrand">Underarmour</label>
                 </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="babolat" id="babolatBrand">
+                    <label class="brandBox" for="babolatBrand">Babolat</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="hydrogen" id="hydrogenBrand">
+                    <label class="brandBox" for="hydrogenBrand">Hydrogen</label>
+                </li>
             </ul>
         </div>
 

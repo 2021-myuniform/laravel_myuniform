@@ -41,8 +41,11 @@
             @if (isset($userInfo))
             <p style="display: none">ユーザーのお気に入りTops</p>
             <p style="display: none">{{$userInfo->favTops}}</p>
-            @if (isset($getTopsImg))
+            @if (isset($getTopsImg->img))
             <img class="userSelectImgTops" src="{{ asset('img/img_tops/' . $getTopsImg->img) }}" alt="{{$getTopsImg->img}}">
+            @endif
+            @if (isset($getTopsImg->itemId))
+            <img class="userSelectImgTops" src="{{ asset('img/rakuten/'. $getTopsImg->blueImg) }}" alt="{{$getTopsImg->blueImg}}">
             @endif
             @endif
 
@@ -57,6 +60,18 @@
                 <a class="modalBtnSet" href="{{$getTopsImg->url}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
              </div>
             </div>
+            @endif
+            @if (isset($getTopsImg->itemId))
+
+            <div id="topsShowItem" class="modal showItemModal">
+                <p class="modalBtnText">Tops : </p>
+                <p class="modalBtnText">商品名 : {{optional($rakutenInfo)->itemName}}</p>
+                <p class="modalBtnText">購入ページに飛びますか？</p>
+                <div class="modalBtn">
+                   <a class="modalBtnSet" href="#" rel="modal:close">Close</a>
+                   <a class="modalBtnSet" href="{{optional($rakutenInfo)->affiliateUrl}}" target="_blank" rel="noopener noreferrer">購入ページへ</a>
+                </div>
+               </div>
             @endif
         </div>
     </a>

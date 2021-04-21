@@ -172,6 +172,14 @@
                     <input class="brandSelectInput" type="radio" name="brand" value="fila" id="filaBrand">
                     <label class="brandBox" for="filaBrand">FILA</label>
                 </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="babolat" id="babolatBrand">
+                    <label class="brandBox" for="babolatBrand">Babolat</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="mizuno" id="mizunoBrand">
+                    <label class="brandBox" for="mizunoBrand">Mizuno</label>
+                </li>
             </ul>
         </div>
 

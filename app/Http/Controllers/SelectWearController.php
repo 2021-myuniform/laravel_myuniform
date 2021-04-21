@@ -169,12 +169,17 @@ class SelectWearController extends Controller
         $getSocksSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->first();
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+        $rakutenInfo = [];
+        // if(!isset($getTopsImg)){
+        //     $getTopsImg = DB::table('tops_rakuten_apis')->where('itemId', $userInfo->favTops)->first();
+        //     $rakutenInfo = SearchItemPack::SearchRakutenAPISolo($getTopsImg->itemId);
+        // }
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
         $getCapsImg = DB::table('caps_tables')->where('id', $userInfo->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
 
-        return view('mainPage.searchTops', ['topsItemsOutputs' => $topsItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg,  'rakutenLists' => $rakutenList]);
+        return view('mainPage.searchTops', ['topsItemsOutputs' => $topsItemsOutput, 'users' => $user, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg,  'rakutenLists' => $rakutenList, 'rakutenInfo' => $rakutenInfo, 'topsItem' => $topsItems]);
     }
 
     public function sendTops(Request $request)
@@ -196,12 +201,19 @@ class SelectWearController extends Controller
         $getSocksSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'socks')->first();
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
+
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
         $getCapsImg = DB::table('caps_tables')->where('id', $userInfo->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();
 
+        $rakutenInfo = [];
+        if(!isset($getTopsImg)){
+            $getTopsImg = DB::table('tops_rakuten_apis')->where('itemId', $userInfo->favTops)->first();
+            $rakutenInfo = SearchItemPack::SearchRakutenAPISoloSend($getTopsImg->itemId);
+        }
 
-        return view('mainPage.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg]);
+
+        return view('mainPage.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo, 'getPantsSet' => $getPantsSet, 'getTopsSet' => $getTopsSet, 'getShoesSet' => $getShoesSet, 'getCapsSet' => $getCapsSet, 'getSocksSet' => $getSocksSet, 'users' => $user, 'getPantsImg' => $getPantsImg, 'getTopsImg' => $getTopsImg, 'getShoesImg' => $getShoesImg, 'getCapsImg' => $getCapsImg, 'getSocksImg' => $getSocksImg, 'rakutenInfo' => $rakutenInfo]);
 
         // return view('contents.main', ['selectTops' => $selectTops, 'userInfo' => $userInfo,'users' => $user]);
     }
