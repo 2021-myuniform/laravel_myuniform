@@ -160,6 +160,7 @@ class SelectWearController extends Controller
 
         $rakutenList = SearchItemPack::SearchRakutenAPI($rakutenGenre, $rakutenBrandTag, $rakutenColorTag);
 
+
         $userInfo = DB::table('users')->where('id', $user->id)->first();
         $getPantsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'pants')->first();
         $getTopsSet = DB::table('usersFavoriteLists')->where('user_id', $user->id)->where('type', 'tops')->first();
