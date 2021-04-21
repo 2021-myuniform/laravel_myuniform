@@ -184,6 +184,38 @@
                     <input class="brandSelectInput" type="radio" name="brand" value="underarmour" id="underarmourBrand">
                     <label class="brandBox" for="underarmourBrand">Underarmour</label>
                 </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="babolat" id="babolatBrand">
+                    <label class="brandBox" for="babolatBrand">Babolat</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="lecoqsportif" id="lecoqsportifBrand">
+                    <label class="brandBox" for="lecoqsportifBrand">le coq sportif</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="lacoste" id="lacosteBrand">
+                    <label class="brandBox" for="lacosteBrand">Lacoste</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="newbalance" id="newbalanceBrand">
+                    <label class="brandBox" for="newbalanceBrand">New Balance</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="dunlop" id="dunlopBrand">
+                    <label class="brandBox" for="dunlopBrand">Dunlop</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="srixon" id="srixonBrand">
+                    <label class="brandBox" for="srixonBrand">Srixon</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="oakley" id="oakleyBrand">
+                    <label class="brandBox" for="oakleyBrand">Oakley</label>
+                </li>
+                <li class="brandSelectList">
+                    <input class="brandSelectInput" type="radio" name="brand" value="hydrogen" id="hydrogenBrand">
+                    <label class="brandBox" for="hydrogenBrand">Hydrogen</label>
+                </li>
             </ul>
         </div>
 

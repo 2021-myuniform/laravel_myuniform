@@ -169,10 +169,10 @@ class SelectWearController extends Controller
         $getPantsImg = DB::table('pants_tables')->where('id', $userInfo->favPants)->first();
         $getTopsImg = DB::table('tops_tables')->where('id', $userInfo->favTops)->first();
         $rakutenInfo = [];
-        if(!isset($getTopsImg)){
-            $getTopsImg = DB::table('tops_rakuten_apis')->where('itemId', $userInfo->favTops)->first();
-            $rakutenInfo = SearchItemPack::SearchRakutenAPISolo($getTopsImg->itemId);
-        }
+        // if(!isset($getTopsImg)){
+        //     $getTopsImg = DB::table('tops_rakuten_apis')->where('itemId', $userInfo->favTops)->first();
+        //     $rakutenInfo = SearchItemPack::SearchRakutenAPISolo($getTopsImg->itemId);
+        // }
         $getShoesImg = DB::table('shoes_tables')->where('id', $userInfo->favShoes)->first();
         $getCapsImg = DB::table('caps_tables')->where('id', $userInfo->favCaps)->first();
         $getSocksImg = DB::table('socks_tables')->where('id', $userInfo->favSocks)->first();

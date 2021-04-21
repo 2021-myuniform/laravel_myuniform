@@ -47,7 +47,14 @@ class SearchItemPack
                 foreach ($response as $item) {
                     //画像サイズを変えたかったのでURLを整形します
                     // $str = str_replace("_ex=128x128", "_ex=175x175", $item['mediumImageUrls'][0]['imageUrl']);
-                    $str = $item['mediumImageUrls'][0]['imageUrl'];
+                    // $str = $item['mediumImageUrls'][0]['imageUrl'];
+
+                    if(isset($item['mediumImageUrls'][0]['imageUrl']))
+                    {
+                        $str = $item['mediumImageUrls'][0]['imageUrl'];
+                    }else{
+                        $str = null;
+                    }
 
                     $items[] = array(
                         'itemName' => $item['itemName'],
@@ -276,6 +283,30 @@ class SearchItemPack
             case 'armani':
                 $brand = 1005489;
                 break;
+            // case 'babolat':
+            //     $brand = 1008404;
+            //     break;
+            case 'hydrogen':
+                $brand = 1002257;
+                break;
+            case 'lecoqsportif':
+                $brand = 1000865;
+                break;
+            case 'lacoste':
+                $brand = 1000808;
+                break;
+            // case 'newbalance':
+            //     $brand = 1000597;
+            //     break;
+            case 'dunlop':
+                $brand = 1004244;
+                break;
+            // case 'srixon':
+            //     $brand = 1004239;
+            //     break;
+            // case 'oakley':
+            //     $brand = 1001782;
+            //     break;
             default :
                 $brand = $brand;
                 break;
